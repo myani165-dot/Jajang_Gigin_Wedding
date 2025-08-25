@@ -361,9 +361,10 @@ body {
         padding: 25px 30px 10px;
     }
     .card-body h2{
-        font-family: 'italianno',cursive;
+        font-family: 'sort mill goudy', serif;
         font-size: 4rem;
         text-align: center;
+        text-decoration: underlined;
     }
     .card-body p{
         margin-left: 1.4rem;
