@@ -201,90 +201,94 @@
         </div>        
       </section>
 
-      <section id="gift" class="gift text-center">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-8 col-10 text-center">
-              <h1 class="mb-4">Wedding Gift</h1>
-              <p>Doa restu dan kehadiran Anda adalah hadiah terindah bagi kami. Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara langsung atau melalui transfer bank.</p>
+      <section id="gift" class="gift text-center">  
+  <div class="container">  
+    <div class="row justify-content-center">  
+      <div class="col-md-8 col-10 text-center">  
+        <h1 class="mb-4">Wedding Gift</h1>  
+        <p>Doa restu dan kehadiran Anda adalah hadiah terindah bagi kami.  
+        Dan jika memberi adalah ungkapan tanda kasih Anda,  
+        Anda dapat memberi kado secara langsung atau melalui transfer bank.</p>  
 
-              <!-- Tombol -->
-              <p>
-              <a id="giftToggleBtn" class="btn btn-primary btn-bounce btn-glow" type="button" data-bs-toggle="collapse" data-bs-target="#giftcollapse" aria-expanded="false" aria-controls="giftcollapse">
-                <i class="bi bi-envelope-paper-heart"></i>
-                Amplop Online
-              </a>
-            </p>
+        <!-- Tombol Amplop -->  
+        <p>  
+          <a id="giftToggleBtn" class="btn btn-primary btn-bounce btn-glow"  
+             type="button" data-bs-toggle="collapse" data-bs-target="#giftcollapse"  
+             aria-expanded="false" aria-controls="giftcollapse">  
+            <i class="bi bi-envelope-paper-heart"></i> Amplop Online  
+          </a>  
+        </p>  
 
-            <!-- Konten yang disembunyikan -->
-            <div class="collapse" id="giftcollapse">
-              <div class="card-body">
-                
-                <!-- Kartu ATM dengan teks di dalam -->
-                 <div class="atm-card fade-slide">
-                  <img src="img/atm.png" class="img-fluid" alt="Kartu ATM">
-                  <!-- Teks di dalam Kartu ATM -->
-                  <div class="atm-text text-center">
-                    <p><strong id="rekening">38101500068776</strong></p>
-                    <p>a.n <strong>Muhammad Nurjaman</strong></p>
-                    
-                    <!-- Tombol salin -->
-                    <button class="btn1 btn-success btn-bounce text-center" id="copyBtn" onclick="copyRekening()">
-                      <i class="bi bi-clipboard"></i> Salin No. Rekening
-                    </button>
-                  </div>
-                 </div>
-              </div>
-              </div>
+        <!-- Konten Amplop -->  
+        <div class="collapse" id="giftcollapse">  
+          <div class="card-body">  
+            <div class="atm-card fade-slide">  
+              <img src="img/atm.png" class="img-fluid" alt="Kartu ATM">  
+              <div class="atm-text text-center">  
+                <p><strong id="rekening">38101500068776</strong></p>  
+                <p>a.n <strong>Muhammad Nurjaman</strong></p>  
+                <button class="btn btn-outline-primary btn-bounce text-center" id="copyBtn">  
+                  <i class="bi bi-clipboard"></i> Salin No. Rekening  
+                </button>  
+              </div>  
+            </div>  
+          </div>  
+        </div>  
 
-              <!-- Tombol konfirmasi WA -->
-              <p class="mt-3">
-                <a href="https://api.whatsapp.com/send?phone=6289517841541&text=Assalamualaikum%20Warahmatullahi%20Wabarakatuh%2C%20saya%20[nama]%20ingin%20memberikan%20hadiah%20untuk%20Jajang%20dan%20Gigin.%20Saya%20sudah%20transfer%20ke%20rekening%20Muhammad%20Nurjaman%20Bank%20BTN%2038101500068776%20dengan%20nominal%20[jumlah]%20semoga%20berkah%20acaranya" class="btn btn-success btn-bounce btn-glow" target="_blank" id="confirmBtn">
-                  <i class="bi bi-whatsapp"></i> Konfirmasi Amplop
-                </a>
-              </p>
+        <!-- Tombol konfirmasi WA -->  
+        <p class="mt-3">  
+          <a href="https://api.whatsapp.com/send?phone=6289517841541&text=Assalamualaikum%20Warahmatullahi%20Wabarakatuh%2C%20saya%20[nama]%20ingin%20memberikan%20hadiah%20untuk%20Jajang%20dan%20Gigin.%20Saya%20sudah%20transfer%20ke%20rekening%20Muhammad%20Nurjaman%20Bank%20BTN%2038101500068776%20dengan%20nominal%20[jumlah]%20semoga%20berkah%20acaranya"  
+             class="btn btn-success btn-bounce btn-glow" target="_blank" id="confirmBtn">  
+            <i class="bi bi-whatsapp"></i> Konfirmasi Amplop  
+          </a>  
+        </p>  
 
-              <!-- Garis Kado -->
-              <div class="divider animate-on-scroll">
-                <span></span>
-                <i class="bi bi-gift"></i>
-                <span></span>
-              </div>
+        <!-- Garis Kado -->  
+        <div class="divider animate-on-scroll">  
+          <span></span>  
+          <i class="bi bi-gift"></i>  
+          <span></span>  
+        </div>  
 
-              <!-- Tombol Kirim Kado -->
-            <a class="btn btn-primary btn-bounce btn-glow mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#giftAddressCollapse" aria-expanded="false" aria-controls="giftAddressCollapse">
-              <i class="bi bi-gift"></i> Kirim Kado
-            </a>
+        <!-- Tombol Kirim Kado -->  
+        <a class="btn btn-primary btn-bounce btn-glow mb-3" type="button"  
+           data-bs-toggle="collapse" data-bs-target="#giftAddressCollapse"  
+           aria-expanded="false" aria-controls="giftAddressCollapse">  
+          <i class="bi bi-gift"></i> Kirim Kado  
+        </a>  
 
-            <!-- Konten Kado -->
-            <div class="collapse mt-4" id="giftAddressCollapse">
-              <div class="card card-body shadow-sm address-card">
-                <p>
-                  Rumah mempelai Wanita <br>
-                  Dsn Babakan Bandung <br> Desa Kutamandiri, Kec. Tanjungsari Kab. Sumedang <br>
-                  Rt/Rw 003/004
-                  <br>
-                <button id="copyAddressBtn" class="btn btn-outline-primary btn-sm">
-                  <i class="bi bi-clipboard"></i> Salin Alamat Kirim Kado
-                </button>
-                </p> 
-               </div>
-            </div>
-          </div>
-      </section>
+        <!-- Konten Alamat Kado -->  
+        <div class="collapse mt-4" id="giftAddressCollapse">  
+          <div class="card card-body shadow-sm address-card">  
+            <p>  
+              Rumah mempelai Wanita <br>  
+              Dsn Babakan Bandung <br>  
+              Desa Kutamandiri, Kec. Tanjungsari Kab. Sumedang <br>  
+              Rt/Rw 003/004  
+              <br>  
+              <button id="copyAddressBtn" class="btn btn-outline-primary btn-sm">  
+                <i class="bi bi-clipboard"></i> Salin Alamat Kirim Kado  
+              </button>  
+            </p>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+</section>  
 
-      <!-- Toast -->
-       <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">
-        <div id="copy-Toast" class="toast align-items-center border-0 denim-toast" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="d-flex">
-            <div class="toast-body"><i class="bi bi-check2"></i>Teks berhasil disalin!
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast">
-            </button>
-          </div>
-        </div>
-       </div>
-
+<!-- Toast -->  
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">  
+  <div id="copy-Toast" class="toast align-items-center border-0 bg-success text-white"  
+       role="alert" aria-live="assertive" aria-atomic="true">  
+    <div class="d-flex">  
+      <div class="toast-body">  
+        <i class="bi bi-check2"></i> Teks berhasil disalin!  
+      </div>  
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>  
+    </div>  
+  </div>  
+</div>  
+    
     <footer>
       <div class="container">
         <div class="row">
@@ -371,133 +375,71 @@
       disableScroll();
     }
   </script>
-  
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-  const collapseEl = document.getElementById('giftcollapse');
-  const toggleBtn  = document.getElementById('giftToggleBtn');
-
-  // Ganti teks & warna tombol
-  collapseEl.addEventListener('shown.bs.collapse', function () {
-    animatedEls.forEach(el => el.classList.add('showing'));
-    toggleBtn.innerHTML = '<i class="bi bi-envelope"></i> Tutup Amplop';
-    toggleBtn.classList.remove('btn-primary');
-    toggleBtn.classList.add('btn-info'); // biru muda
-  });
-
-  collapseEl.addEventListener('hide.bs.collapse', function () {
-    animatedEls.forEach(el => el.classList.remove('showing'));
-    toggleBtn.innerHTML = '<i class="bi bi-envelope-paper-heart"></i> Amplop Online';
-    toggleBtn.classList.remove('btn-info');
-    toggleBtn.classList.add('btn-primary');
-  });
-
-  // Buang focus supaya warna hover/active gak “nyangkut”
-  collapseEl.addEventListener('shown.bs.collapse', () => toggleBtn.blur());
-  collapseEl.addEventListener('hidden.bs.collapse', () => toggleBtn.blur());
-
-  // ===== ANIMASI ISI COLLAPSE =====
-  const animatedEls = collapseEl.querySelectorAll('.fade-slide');
-
-  // Saat mulai dibuka: reset ke start state (opacity 0, geser)
-  collapseEl.addEventListener('show.bs.collapse', function () {
-    animatedEls.forEach(el => {
-      el.classList.remove('is-visible');
-      void el.offsetWidth; // force reflow biar transisi ke-detect
-    });
-  });
-
-  // Setelah benar2 terbuka: tambah class visible (akan transisi)
-  collapseEl.addEventListener('shown.bs.collapse', function () {
-    // optional: stagger biar muncul berurutan
-    animatedEls.forEach((el, i) => {
-      setTimeout(() => el.classList.add('is-visible'), i * 100);
-    });
-  });
-
-  // Saat mau ditutup: kembalikan ke start state (biar animasi reverse)
-  collapseEl.addEventListener('hide.bs.collapse', function () {
-    animatedEls.forEach(el => el.classList.remove('is-visible'));
-  });
-});
-
-    // Tombol salin untuk nomor rekening
-    document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('copyBtn');
-  const rekeningEl = document.getElementById('rekening');
+document.addEventListener("DOMContentLoaded", () => {
   const toastEl = document.getElementById('copy-Toast');
 
-  btn.addEventListener('click', () => {
-    const rekening = rekeningEl.textContent.trim();
-
-    // Modern API (HTTPS / localhost)
+  // --- Fungsi salin universal ---
+  function copyText(text, btn, successLabel) {
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(rekening)
-        .then(() => afterCopy(btn, toastEl))
-        .catch(() => fallbackCopy(rekening, btn, toastEl));
+      navigator.clipboard.writeText(text)
+        .then(() => afterCopy(btn, successLabel))
+        .catch(() => fallbackCopy(text, btn, successLabel));
     } else {
-      // Fallback untuk iOS / Safari lama
-      fallbackCopy(rekening, btn, toastEl);
+      fallbackCopy(text, btn, successLabel);
     }
-  });
-});
-
-    // --- Tombol Salin Alamat ---
-  document.getElementById('copyAddressBtn').addEventListener('click', function() {
-    const alamat = "Gina Guslina, Dsn Babakan Bandung Rt/Rw 003/004, Desa Kutamandiri, Kec. Tanjungsari, Kab. Sumedang";
-    navigator.clipboard.writeText(alamat).then(() => {
-      showToast();
-    });
-  });
-
-function fallbackCopy(text, btn, toastEl) {
-  const ta = document.createElement('textarea');
-  ta.value = text;
-  ta.style.position = 'fixed';
-  ta.style.top = '-1000px';
-  document.body.appendChild(ta);
-
-  const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  if (isiOS) {
-    const range = document.createRange();
-    range.selectNodeContents(ta);
-    const sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-    ta.setSelectionRange(0, 999999);
-  } else {
-    ta.select();
   }
 
-  let ok = false;
-  try { ok = document.execCommand('copy'); } catch(e) {}
-  document.body.removeChild(ta);
+  function fallbackCopy(text, btn, successLabel) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
 
-  if (ok) afterCopy(btn, toastEl);
-  else alert('Gagal menyalin, silakan salin manual 🙏');
-}
+    ta.focus();
+    ta.select();
 
-function afterCopy(btn, toastEl) {
-  // Ganti tampilan tombol
-  btn.innerHTML = '<i class="bi bi-check"></i> Berhasil Disalin!';
-  btn.classList.remove('btn-outline-primary');
-  btn.classList.add('btn-success');
+    try {
+      const ok = document.execCommand("copy");
+      if (ok) afterCopy(btn, successLabel);
+    } catch (err) {
+      alert("Silakan salin manual 🙏");
+    }
+    document.body.removeChild(ta);
+  }
 
-  // --- Fungsi Toast ---
-  function showToast() {
-    const toastEl = document.getElementById('copy-Toast');
+  function afterCopy(btn, successLabel) {
+    // Ganti teks tombol sementara
+    const oldHTML = btn.innerHTML;
+    btn.innerHTML = `<i class="bi bi-check"></i> ${successLabel}`;
+    btn.classList.remove("btn-outline-primary");
+    btn.classList.add("btn-success");
+
+    // Show toast
     const toast = new bootstrap.Toast(toastEl);
     toast.show();
+
+    setTimeout(() => {
+      btn.innerHTML = oldHTML;
+      btn.classList.remove("btn-success");
+      btn.classList.add("btn-outline-primary");
+    }, 2000);
   }
 
-  // Balik lagi setelah 2 detik
-  setTimeout(() => {
-    btn.innerHTML = '<i class="bi bi-clipboard"></i> Salin No. Rekening';
-    btn.classList.remove('btn-success');
-    btn.classList.add('btn-outline-primary');
-  }, 2000);
-}
-  </script>
+  // Tombol rekening
+  document.getElementById("copyBtn").addEventListener("click", function() {
+    const rekening = document.getElementById("rekening").textContent.trim();
+    copyText(rekening, this, "Nomor Disalin!");
+  });
+
+  // Tombol alamat
+  document.getElementById("copyAddressBtn").addEventListener("click", function() {
+    const alamat = "Gina Guslina, Dsn Babakan Bandung Rt/Rw 003/004, Desa Kutamandiri, Kec. Tanjungsari, Kab. Sumedang";
+    copyText(alamat, this, "Alamat Disalin!");
+  });
+});
+</script>
 
   <!-- Garis gift -->
   <script>
