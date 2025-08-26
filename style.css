@@ -578,6 +578,19 @@ body {
     cursor: pointer;
     border: none;
 }
+
+/* Divider denim */
+  .divider span {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #446d92, transparent);
+  }
+  .divider i {
+    color: #446d92;
+    font-size: 1.5rem;
+    margin: 0 10px;
+  }
+
 /* Toast style */
   .big-toast {
   min-width: 220px;
