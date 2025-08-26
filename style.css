@@ -362,9 +362,9 @@ body {
     }
     .card-body h2{
         font-family: 'sort mill goudy', serif;
-        font-size: 4rem;
+        font-size: 3rem;
         text-align: center;
-        text-decoration: underlined;
+        text-decoration: underline;
     }
     .card-body p{
         margin-left: 1.4rem;
@@ -382,7 +382,7 @@ body {
         top: 0;
     }
     .info a {
-        background-color: #7b5b3e;
+        background-color: #446d92;
         color: white;
         padding: 8px 15px;
         border-radius: 20px;
