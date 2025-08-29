@@ -276,6 +276,14 @@ body {
   transform: scale(1.05); /* Zoom efek saat hover */
 }
 
+.mempelai .couple img {
+  width: 100%;
+  height: auto;
+  max-width: 180px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeZoomIn 1s ease-out forwards;
+}
 
 .mempelai .img-bismillah {
     margin-top: 2rem;
@@ -778,7 +786,7 @@ body {
 }
 
 .btn3 {
-    background-color: #6495ed;
+    background-color: #98AFC7;
 }
 
 .audio-icon-wrapper {
@@ -812,8 +820,12 @@ body {
 
 
 /* Media Queries */
-/* layar lebar */
-
+/* Extra Large */
+@media (min-width: 1200px) {
+  .mempelai .couple img {
+    max-width: 300px;
+  }
+}
 /* laptop */
 @media (max-width: 992px) {
     html{
@@ -823,6 +835,9 @@ body {
     .simply-countdown > .simply-section {
         padding: 70px;
     }
+    .mempelai .couple img {
+    max-width: 260px;
+  }
 }
 
 /* tablet */
@@ -856,9 +871,9 @@ body {
         text-align: center;
     }
 
-    .mempelai .img-responsive {
-        width: 70%;
-    }
+    .mempelai .couple img {
+    max-width: 220px;
+  }
 }
 
 /* mobile phone */
@@ -911,6 +926,7 @@ body {
     
 
 }
+
 
 
 
