@@ -36,15 +36,6 @@ body {
     background-color: linear-gradient(to bottom, rgba(68, 109, 146, 0.8), rgba(68, 109, 146, 0.8));
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  font-weight: 600;
-}
-
-p {
-  line-height: 1.6;
-}
-
 .hero h1, .hero h2, .hero h4 {
     text-shadow: var(--shadow);
     text-align: center;
@@ -80,29 +71,9 @@ p {
     transform: scale(1.05);
 }
 
-.mynavbar {
-    background-color: rgba(255, 255, 255, 0) !important;
-    
-}
-
-.mynavbar .offcanvas {
-    height: 47vh;
-}
-
-.mynavbar .navbar-brand,
-.mynavbar .offcanvas-title {
-    font-family: 'Italianno', cursive;
-    font-size: 2rem;
-}
-
-.mynavbar .nav-link {
-    text-transform: uppercase;
-}
-
 .home {
-    margin-top: -4rem;
-    padding-top: 15rem;
-    padding-bottom: 5rem;
+    padding: 6rem 2rem;
+    text-align: center;
     position: relative;
     width: 100%;
     min-height: 100vh; /* full layar */
@@ -178,6 +149,8 @@ p {
     font-size: 1.4rem;
     font-family: "Sorts Mill Goudy", serif;
     font-style: italic;
+    max-width: 700px; 
+    margin: 1rem auto;
 }
 
 .home a {
@@ -261,6 +234,8 @@ p {
 }
 
 .mempelai {
+    padding: 6rem 2rem;
+    text-align: center;
     background-color: #446e922b;
     position: relative;
     width: 100%;
@@ -861,71 +836,32 @@ p {
 
 /* tablet */
 @media (max-width: 768px) {
-    html{
-        font-size: 55%;
-    }
+   .hero h1 { font-size: 4rem; }
+  .hero h2 { font-size: 1.3rem; }
+  .hero h4 { font-size: 1.1rem; }
 
-     .hero h4 {
-        top: 15%;
-   }
-     .hero a {
-        margin-bottom: 100px;
-   }  
+  .home h1 { font-size: 3.5rem; }
+  .home p { font-size: 1.2rem; }
 
-    .simply-countdown > .simply-section {
-        padding: 60px;
-        margin: 5px;
-    }
-
-    .simply-countdown > .simply-section .simply-amount {
-        font-size: 2.5rem;
-    }
-
-    .simply-countdown > .simply-section .simply-word {
-        font-size: 1.2rem;
-    }
-
-    .mynavbar .nav-link {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .mempelai .couple img {
-    max-width: 220px;
-  }
+  .mempelai .couple img { max-width: 220px; }
 }
-
+    
 /* mobile phone */
 @media (max-width: 576px) {
-    html{
-        font-size: 45%;
-    }
+    .hero h1 { font-size: 3rem; }
+  .hero h2 { font-size: 1.2rem; }
+  .hero h4 { font-size: 1rem; margin-top: 1rem; }
 
-    .hero h4 {
-        top: 10%;
-    }
-     .hero a {
-        margin-bottom: 75px;
-   }  
+  .home h1 { font-size: 3rem; }
+  .home p { font-size: 1.1rem; }
 
-    .simply-countdown > .simply-section {
-        padding: 20px;
-        margin: 1px;
-        margin-top: 1rem;
-        margin-bottom: 25rem;
-    }
+  .mempelai .couple img { max-width: 180px; }
 
-    .simply-countdown > .simply-section .simply-amount {
-        font-size: 1.6rem;
-    }
-
-    .simply-countdown > .simply-section .simply-word {
-        font-size: 1rem;
-    }
-    
-    .home h4 {
-        margin-top: 50%;
-    
+  .simply-countdown > .simply-section {
+    padding: 10px;
+    margin: 5px;
+    margin-bottom: 2rem; /* Biar ga kepanjangan */
+  }
 }
 
 
