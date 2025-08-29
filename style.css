@@ -761,6 +761,7 @@ body {
     bottom: 2.5rem;
     right: 2rem;
     cursor: pointer;
+    opacity: 0.5;
     color: white;
     mix-blend-mode: difference;
     animation: rotating 4s linear infinite;
@@ -888,6 +889,7 @@ body {
 }
 
 }
+
 
 
 
