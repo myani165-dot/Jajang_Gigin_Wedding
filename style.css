@@ -69,7 +69,6 @@ body {
 }
 
 .home {
-    margin-top: -4.6rem;
     padding-top: 15rem;
     padding-bottom: 5rem;
     position: relative;
@@ -221,14 +220,6 @@ body {
     transform: scaleX(1);
 }
 
-/* responsif: garis sedikit lebih pendek di HP */
-@media (max-width: 576px) {
-    .quote.active::after {
-        width: 120px;
-        /* ubah angka ini untuk panjang garis di HP */
-    }
-}
-
 .mempelai {
     background-color: #446e922b;
     position: relative;
@@ -257,6 +248,14 @@ body {
   transform: scale(1.05); /* Zoom efek saat hover */
 }
 
+.mempelai .couple img {
+  width: 100%;
+  height: auto;
+  max-width: 180px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeZoomIn 1s ease-out forwards;
+}
 
 .mempelai .img-bismillah {
     margin-top: 2rem;
@@ -784,10 +783,25 @@ body {
     }
 }
 
-
+/* Animasi Fade + Zoom */
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 /* Media Queries */
-/* layar lebar */
+/* Extra Large */
+@media (min-width: 1200px) {
+  .mempelai .couple img {
+    max-width: 300px;
+  }
+}
 
 /* laptop */
 @media (max-width: 992px) {
@@ -798,6 +812,10 @@ body {
     .simply-countdown > .simply-section {
         padding: 70px;
     }
+
+    .mempelai .couple img {
+    max-width: 260px;
+  }
 }
 
 /* tablet */
@@ -826,14 +844,9 @@ body {
         font-size: 1.2rem;
     }
 
-    .mynavbar .nav-link {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .mempelai .img-responsive {
-        width: 70%;
-    }
+     .mempelai .couple img {
+      max-width: 220px;
+     }
 }
 
 /* mobile phone */
@@ -883,6 +896,11 @@ body {
         font-size: 1.25rem;
     }
 
-    
+    .quote.active::after {
+        width: 120px;
+        /* ubah angka ini untuk panjang garis di HP */
+    }
+}
 
 }
+
