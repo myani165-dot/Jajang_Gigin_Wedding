@@ -289,6 +289,7 @@ body {
 .mempelai .img-bismillah {
     margin-top: 2rem;
     filter: brightness(10%), contrast(120%);
+    max-width: 180px;
 }
 
 .mempelai h3 {
@@ -932,3 +933,4 @@ body {
     
 
 }
+
