@@ -13,6 +13,7 @@ body {
     min-height: 4000px;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .hero::before {
@@ -35,6 +36,15 @@ body {
     background-color: linear-gradient(to bottom, rgba(68, 109, 146, 0.8), rgba(68, 109, 146, 0.8));
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.6;
+}
+
 .hero h1, .hero h2, .hero h4 {
     text-shadow: var(--shadow);
     text-align: center;
@@ -48,10 +58,12 @@ body {
 
 .hero h2 {
     font-size: 1.6rem;
+    margin-top: 1rem;
 }
 
 .hero h4 {
     font-size: 1.4rem;
+    margin-top: 1.5rem;
 }
 
 .hero a {
@@ -915,6 +927,7 @@ body {
         margin-top: 50%;
     
 }
+
 
 
 
