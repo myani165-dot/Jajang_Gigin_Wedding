@@ -854,7 +854,7 @@ body {
     }
 
      .hero h4 {
-        margin-top: 700px;
+        top: 15%;
    }
      .hero a {
         margin-bottom: 100px;
@@ -890,7 +890,7 @@ body {
     }
 
     .hero h4 {
-        margin-top: 350px;
+        top: 10%;
     }
      .hero a {
         margin-bottom: 75px;
@@ -915,6 +915,7 @@ body {
         margin-top: 50%;
     
 }
+
 
 
 
