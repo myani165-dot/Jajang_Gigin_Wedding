@@ -68,26 +68,51 @@ body {
     transform: scale(1.05);
 }
 
-.home {
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-}
+.home { 
+    margin: 0; 
+    padding-top: 15rem; 
+    padding-bottom: 5rem; 
+    position: relative; 
+    width: 100%; 
+    min-height: 100vh; /* full layar */ } /* overlay bagian atas */ 
 
-/* Gambar Atas */
-.home-top img {
-  width: 100%;
-  display: block;
-  filter: blur(5px); /* blur biar teks lebih kontras */
-  opacity: 0.9;
-}
+.home::before { 
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 90%; 
+    height:50%; /* sedikit lebih dari setengah biar tumpang tindih */ /* ga jadi deh tumpangtindihnya cuma satu layar berdua */ 
+    background: url('img/fix2.png') center top/cover no-repeat; 
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%); 
+    mask-repeat: no-repeat; 
+    mask-size: 100% 100%; 
+    mask-position: top; 
+    -webkit-mask-image: background linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%); 
+    -webkit-mask-repeat: no-repeat; 
+    -webkit-mask-size: 100% 100%; 
+    -webkit-mask-position: top; 
+    pointer-events: none; z-index: -3; } /* overlay bagian bawah */ 
 
-/* Teks */
-.home-text {
-  margin-top: -50px; /* tarik sedikit biar dekat dengan gambar atas */
-  padding: 20px;
-  z-index: 2;
-  position: relative;
+.home::after { 
+    content: ""; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+    height: 60%; /* sedikit lebih dari setengah */ 
+    background: url('img/bg.png') center bottom/cover no-repeat; 
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 120%); 
+    mask-repeat: no-repeat; 
+    mask-size: 100% 100%; 
+    mask-position: top; 
+    -webkit-mask-image: background linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%); 
+    -webkit-mask-repeat: no-repeat; 
+    -webkit-mask-size: 100% 100%; 
+    -webkit-mask-position: top; 
+    opacity: 0.2; 
+    pointer-events: none; 
+    z-index: -2; 
 }
 
 .home h1, .home h2, .home h4, .home p {
@@ -880,6 +905,7 @@ body {
     
 
 }
+
 
 
 
