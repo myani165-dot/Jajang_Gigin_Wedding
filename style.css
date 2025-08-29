@@ -750,8 +750,9 @@ body {
   animation: bounce 1s ease;
 }
 
-.rsvv{
+.rsvv {
     background-color: #446d92;
+    color: #446d92;
 }
 /* Warna tema denim */
 .rsvp-section {
@@ -768,6 +769,7 @@ body {
   position: relative;
   margin-top: -12px;       /* bikin tumpang tindih */
   z-index: 1;
+    background-color: var(--denim);
 }
 
 /* Card styling */
@@ -903,4 +905,5 @@ body {
     }
 
     
+
 }
