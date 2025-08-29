@@ -83,7 +83,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     height:50%; /* sedikit lebih dari setengah biar tumpang tindih */
     /* ga jadi deh tumpangtindihnya cuma satu layar berdua */
     background: url('img/fix2.png') center top/cover no-repeat;
@@ -911,6 +911,7 @@ body {
     
 
 }
+
 
 
 
