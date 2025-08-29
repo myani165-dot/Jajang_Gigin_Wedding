@@ -760,11 +760,8 @@ body {
 
 .rsvv {
     background-color: #446d92;
-    color: #446d92;
-    font-familly: 'sort mill goudy', serif;
-    text-align: italic;
 }
-.rs {
+.rsvv h2 {
     color: #446d92;
     font-familly: 'sort mill goudy', serif;
     text-align: italic;
@@ -933,6 +930,7 @@ body {
     
 
 }
+
 
 
 
