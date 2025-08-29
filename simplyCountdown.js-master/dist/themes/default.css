@@ -20,7 +20,8 @@
   width: 65px;
   height: 65px;
   padding: 60px;
-  display: flex;
+  margin: 10px;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   background: rgba(127, 159, 249, 0.2);
