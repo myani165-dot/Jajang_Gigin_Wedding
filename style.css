@@ -382,40 +382,18 @@ body {
         text-align: left;
     }
     .garis {
-        display: inline-block;      /* penting: biar width garis bisa di-center */
-    position: relative;
-    text-align: center;
-    /* kalau paragraf mau tetap center */
-    max-width: 900px;
-    /* opsional: batasi lebar paragraf */
-    line-height: 1.6;
-}
-
-/* garis bawah */
-.garis::after{
-    content: "";
-    display: block;
-    height: 2px;
-    width: 0;
-    /* mulai 0, nanti melebar */
-    background: #446d92 !important;
-    margin: 14px auto 0;
-    /* auto = center */
-    border-radius: 2px;
-    
-    /* animasi melebar */  
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 1s ease, opacity 1s ease;
-}
-
-/* saat terlihat di layar (ditambah lewat JS), garis melebar */
-.garis.active::after {
-    width: 160px;
-    /* ubah angka ini untuk panjang garis */
-    opacity: 1;
-    transform: scaleX(1);
-}
+        text-align: center;
+        display: inline-block;
+        position: relative;
+    }
+    .garis::after {
+        content: "";
+        display: block;
+        width: 200px;
+        height: 2px;
+        background: var(--denim);
+        margin: 15px auto 0;
+    }
     .icon-text {
         position: relative;
         padding-left: 20px;
@@ -955,6 +933,7 @@ body {
     
 
 }
+
 
 
 
