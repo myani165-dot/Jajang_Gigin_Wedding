@@ -761,6 +761,8 @@ body {
 .rsvv {
     background-color: #446d92;
     color: #446d92;
+    font-familly: 'sort mill goudy', serif;
+    text-align: italic;
 }
 /* Warna tema denim */
 .rsvp-section {
@@ -926,6 +928,7 @@ body {
     
 
 }
+
 
 
 
