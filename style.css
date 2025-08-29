@@ -758,7 +758,7 @@ body {
   animation: bounce 1s ease;
 }
 
-.rsvv .rs {
+.rsvv, .rs {
     background-color: #446d92;
     color: #446d92;
     font-familly: 'sort mill goudy', serif;
@@ -928,6 +928,7 @@ body {
     
 
 }
+
 
 
 
