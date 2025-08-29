@@ -81,7 +81,7 @@ body {
     position: absolute; 
     top: 0; 
     left: 0; 
-    width: 90%; 
+    width: 95%; 
     height:50%; /* sedikit lebih dari setengah biar tumpang tindih */ /* ga jadi deh tumpangtindihnya cuma satu layar berdua */ 
     background: url('img/fix2.png') center top/cover no-repeat; 
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%); 
@@ -905,6 +905,7 @@ body {
     
 
 }
+
 
 
 
