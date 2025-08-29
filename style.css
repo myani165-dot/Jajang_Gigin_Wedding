@@ -68,7 +68,27 @@ body {
     transform: scale(1.05);
 }
 
+.mynavbar {
+    background-color: rgba(255, 255, 255, 0) !important;
+    
+}
+
+.mynavbar .offcanvas {
+    height: 47vh;
+}
+
+.mynavbar .navbar-brand,
+.mynavbar .offcanvas-title {
+    font-family: 'Italianno', cursive;
+    font-size: 2rem;
+}
+
+.mynavbar .nav-link {
+    text-transform: uppercase;
+}
+
 .home {
+    margin-top: -4.6rem;
     padding-top: 15rem;
     padding-bottom: 5rem;
     position: relative;
@@ -227,6 +247,13 @@ body {
     min-height: 100vh; /* full layar */
 }
 
+.mempelai .couple img {
+  width: 100%;
+  height: auto;
+  max-width: 180px;
+  opacity: 0;
+}
+
 .mempelai p {
     font-size: 1.5rem;
     color: #446d92;
@@ -248,12 +275,6 @@ body {
   transform: scale(1.05); /* Zoom efek saat hover */
 }
 
-.mempelai .couple img {
-  width: 100%;
-  height: auto;
-  max-width: 180px;
-  opacity: 0;
-}
 
 .mempelai .img-bismillah {
     margin-top: 2rem;
@@ -561,6 +582,20 @@ body {
     cursor: pointer;
 }
 
+/* Toast style */
+  .denim-toast {
+    background-color: #446e92b1;
+    color: white;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    animation: slideUp 0.5s ease;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
   /* Efek bounce */
 .btn-bounce {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -664,7 +699,7 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Toast style */
+
 .big-toast {
     min-width: 200px;
     max-width: 250px;
@@ -767,6 +802,8 @@ body {
     }
 }
 
+
+
 /* Media Queries */
 /* Extra Large */
 @media (min-width: 1200px) {
@@ -784,10 +821,6 @@ body {
     .simply-countdown > .simply-section {
         padding: 70px;
     }
-
-    .mempelai .couple img {
-    max-width: 260px;
-  }
 }
 
 /* tablet */
@@ -816,9 +849,13 @@ body {
         font-size: 1.2rem;
     }
 
-     .mempelai .couple img {
-      max-width: 220px;
-     }
+    .mynavbar .nav-link {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .mempelai .couple img { max-width: 220px; }
+    }
 }
 
 /* mobile phone */
@@ -867,20 +904,11 @@ body {
     .mempelai p, .mempelai .couple p {
         font-size: 1.25rem;
     }
-
+    
     .quote.active::after {
         width: 120px;
         /* ubah angka ini untuk panjang garis di HP */
     }
 }
-
+    
 }
-
-
-
-
-
-
-
-
-
