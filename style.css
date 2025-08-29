@@ -777,6 +777,10 @@ body {
   border-radius: 15px;
 }
 
+.btn3 {
+    background-color: #bedbf2;
+}
+
 .audio-icon-wrapper {
     width : 4rem;
     height: 4rem;
@@ -907,3 +911,4 @@ body {
     
 
 }
+
