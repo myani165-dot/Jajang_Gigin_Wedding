@@ -688,6 +688,7 @@ body {
     text-wrap: balance;
     word-wrap: break-word;
     font-size: 1.5rem;
+    color: #446d92;
 }
 
 .btn2 {
@@ -754,7 +755,7 @@ body {
 }
 
 .audio-icon-wrapper {
-    width: 4rem;
+    width : 4rem;
     height: 4rem;
     font-size: 4rem;
     position: fixed;
@@ -889,6 +890,7 @@ body {
 }
 
 }
+
 
 
 
