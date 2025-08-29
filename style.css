@@ -88,7 +88,7 @@ body {
 }
 
 .home {
-    margin-top: -4.6rem;
+    margin-top: -4rem;
     padding-top: 15rem;
     padding-bottom: 5rem;
     position: relative;
@@ -850,7 +850,7 @@ body {
 /* tablet */
 @media (max-width: 768px) {
     html{
-        font-size: 65%;
+        font-size: 55%;
     }
 
      .hero h4 {
@@ -886,7 +886,7 @@ body {
 /* mobile phone */
 @media (max-width: 576px) {
     html{
-        font-size: 57%;
+        font-size: 45%;
     }
 
     .hero h4 {
@@ -897,14 +897,14 @@ body {
    }  
 
     .simply-countdown > .simply-section {
-        padding: 30px;
+        padding: 20px;
         margin: 1px;
         margin-top: 1rem;
         margin-bottom: 25rem;
     }
 
     .simply-countdown > .simply-section .simply-amount {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .simply-countdown > .simply-section .simply-word {
@@ -912,8 +912,9 @@ body {
     }
     
     .home h4 {
-        margin-top: 96%;
+        margin-top: 50%;
     
 }
+
 
 
