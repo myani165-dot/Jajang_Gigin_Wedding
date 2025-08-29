@@ -68,27 +68,7 @@ body {
     transform: scale(1.05);
 }
 
-.mynavbar {
-    background-color: rgba(255, 255, 255, 0) !important;
-    
-}
-
-.mynavbar .offcanvas {
-    height: 47vh;
-}
-
-.mynavbar .navbar-brand,
-.mynavbar .offcanvas-title {
-    font-family: 'Italianno', cursive;
-    font-size: 2rem;
-}
-
-.mynavbar .nav-link {
-    text-transform: uppercase;
-}
-
 .home {
-    margin-top: -4.6rem;
     padding-top: 15rem;
     padding-bottom: 5rem;
     position: relative;
@@ -930,6 +910,7 @@ body {
     
 
 }
+
 
 
 
