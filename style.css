@@ -160,110 +160,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Ukuran & penempatan komponen */
-.rose-wrap{
-  --rose-size: 180px;              /* ganti 120–260px sesuai selera */
-  width: var(--rose-size);
-  margin-inline: auto;             /* center */
-  position: relative;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,.15));
-}
-
-/* Warna tema (bisa disamakan dengan palet undangan) */
-.rose{
-  --rose: #446d92;                 /* merah mawar */
-  --rose-dark:#728FCE;
-  --leaf: #3d8b57;
-  --leaf-dark:#2e6a42;
-  --stem: #2f6b3a;
-  width: 100%; height: auto;
-  overflow: visible;
-}
-
-/* Batang tumbuh (stroke dash trick) */
-.stem{
-  stroke: var(--stem);
-  stroke-width: 3.5;
-  stroke-linecap: round;
-  stroke-dasharray: 180;
-  stroke-dashoffset: 180;
-  animation: stemGrow 1.2s ease forwards 0.2s;
-}
-
-/* Daun muncul (scale + fade) */
-.leaf{
-  fill: var(--leaf);
-  stroke: var(--leaf-dark);
-  stroke-width: 1;
-  transform-origin: center;
-  opacity: 0; transform: scale(.6);
-  animation: leafIn .7s ease forwards 1s;
-}
-.leaf-right{ animation-delay: 1.15s; }
-
-/* Kelopak */
-.petal{
-  fill: url(#none); /* no gradient fallback */
-  fill: var(--rose);
-  stroke: var(--rose-dark);
-  stroke-width: .8;
-  transform-origin: 0 0;
-  opacity: 0; transform: scale(.6);
-}
-
-/* urutan “mekar”: core -> p1 -> p2 -> p3 */
-.p-core{ animation: petalIn .5s ease-out forwards .6s; }
-.p1   { animation: petalIn .6s ease-out forwards .75s; }
-.p2   { animation: petalIn .6s ease-out forwards .95s; }
-.p3   { animation: petalIn .6s ease-out forwards 1.15s; }
-
-/* Group bunga goyang lembut setelah mekar */
-.bloom{
-  animation: sway 4s ease-in-out infinite 1.6s;
-  transform-origin: 100px 110px; /* kira-kira pusat di viewBox aslinya */
-}
-
-/* Glow halus */
-.rose-wrap:after{
-  content:"";
-  position:absolute; inset:auto 0 -6px 0; height:10px;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,.25), transparent 60%);
-  filter: blur(2px); opacity:.6;
-  animation: glow 3.2s ease-in-out infinite 1.6s;
-}
-
-/* Animations */
-@keyframes stemGrow{
-  to{ stroke-dashoffset: 0; }
-}
-@keyframes leafIn{
-  to{ opacity: 1; transform: scale(1); }
-}
-@keyframes petalIn{
-  70%{ opacity:1; transform: scale(1.06); }
-  100%{ opacity:1; transform: scale(1); }
-}
-@keyframes sway{
-  0%,100%{ transform: rotate(0deg); }
-  50%{ transform: rotate(1.6deg); }
-}
-@keyframes glow{
-  0%,100%{ opacity:.45; }
-  50%{ opacity:.75; }
-}
-
-/* Kurangi gerak untuk pengguna yang sensitif terhadap animasi */
-@media (prefers-reduced-motion: reduce){
-  .stem,.leaf,.petal,.bloom,.rose-wrap:after{ animation: none !important; opacity:1; transform:none; }
-  .stem{ stroke-dashoffset:0; }
-}
-
-/* Contoh posisi dekoratif (opsional): pojok kanan bawah section */
-.home .rose-wrap.is-floating{
-  position: absolute; right: 6%; bottom: 18%;
-  opacity: .95; pointer-events: none;
-}
-
 .honey {
     background-color: var(--denim);
 }
@@ -1009,6 +905,7 @@ body {
     
 
 }
+
 
 
 
