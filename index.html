@@ -273,29 +273,30 @@
     </div>
 
     <!-- Counter RSVP -->
+    <div class="card p-4 shadow-sm overlap-card">
+      <div id="stats">
+    <p><span id="ucapan-count">0</span> Ucapan 💌</p>
+  </div>
     <div class="row justify-content-center mb-4">
       <div class="col-4">
         <div class="card text-center p-3 shadow-sm">
-          <h4 class="fw-bold text-primary">13</h4>
+          <p class="fw-bold text-primary">✅ Hadir: <span id="hadir">0</span></p>
           <small>Hadir</small>
         </div>
       </div>
       <div class="col-4">
         <div class="card text-center p-3 shadow-sm">
-          <h4 class="fw-bold text-danger">1</h4>
-          <small>Tidak Hadir</small>
+          <p class="fw-bold text-danger">❌ Tidak Hadir: <span id="tidak">0</span></p>
         </div>
       </div>
       <div class="col-4">
         <div class="card text-center p-3 shadow-sm">
-          <h4 class="fw-bold text-warning">3</h4>
-          <small>Masih Ragu</small>
+          <p class="fw-bold text-warning">🤔 Masih Ragu: <span id="ragu">0</span></p>
         </div>
       </div>
     </div>
 
     <!-- Form RSVP -->
-    <div class="card p-4 shadow-sm overlap-card">
       <form method="POST" 
         action="https://script.google.com/macros/s/AKfycbyfw84PUljxzES0QzEValqWFQTKxqExsoHtik8xSr3rRAOPiUXsiBHRQ7ZOZRZxNX-Zkg/exec" id="my-form">
         <input type="text" class="form-control mb-3" id="Nama" name="Nama" placeholder="Nama" required>
@@ -312,29 +313,10 @@
         <button type="submit" class=" btn btn3 btn-primary w-100">Kirim</button>
       </form>
 
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-6">
-                <div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://jajang-gigin-wedding.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </div>
-        </div>
+        <div id="messages">
+    <h3>Ucapan Tamu</h3>
+    <div id="messages-list"></div>
+  </div>
     </div>  
   </div>
 </section>
@@ -365,14 +347,13 @@
         <h3 mt-5>Powered by:</h3>
         <div class="img-cek justify-content-center col-lg-4 col-14">
         <img src="img/logo.png" alt="WillyShafa">
-            <br>
+             </div>
             <!-- Button WA simpel -->
-<a href="https://api.whatsapp.com/send?phone=62895329593200"  
-             class="btn btn-primary btn-bounce btn-glow" target="_blank" id="confirmBtn">  
-            <i class="bi bi-whatsapp"></i> 
-          </a>  
-
-    </div>
+        <a href="https://wa.me/62895329593200" 
+           target="_blank" 
+           class="btn btn-success btn-wa">
+           <i class="bi bi-whatsapp"></i>
+        </a>
 </div>
 
   <div id="audio-container">
@@ -420,19 +401,6 @@
     observer.observe(el));
         fader.forEach((fader)=> {
             observer.observe(fader);
-    });
-  </script>
-
-  <script>
-    const stickyTop = document.querySelector('.sticky-top');
-    const offcanvas = document.querySelector('.offcanvas');
-
-    offcanvas.addEventListener('show.bs.offcanvas', function() {
-      stickyTop.style.overflow = 'visible';
-    });
-
-    offcanvas.addEventListener('hidden.bs.offcanvas', function() {
-      stickyTop.style.overflow = 'hidden';
     });
   </script>
 
@@ -642,6 +610,7 @@
 
 
 </html>
+
 
 
 
