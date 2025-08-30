@@ -166,7 +166,8 @@ body {
 
 /* Ornamen bunga */
 .ornamen-bunga {
-  font-size: 2rem;
+    max-width: 80px;
+  font-size: 1rem;
   margin-bottom: 10px;
   display: inline-block;
   animation: swing 3s ease-in-out infinite;
@@ -941,6 +942,7 @@ body {
     
 
 }
+
 
 
 
