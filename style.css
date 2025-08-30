@@ -167,20 +167,20 @@ body {
 }
 
 /* Ornamen bunga */
+/* Ornamen bunga */
 .ornamen-bunga {
-  max-width: 80px;
-  margin-bottom: 12px;
-  display: inline-block;
-  animation: swing 4s ease-in-out infinite;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  width: 50px;           /* kecil saja */
+  display: block;
+  margin: 0 auto 10px;   /* auto = center, ada jarak bawah */
+  animation: swing 3s ease-in-out infinite;
 }
 
-/* Animasi goyang elegan */
+/* Animasi goyang lembut */
 @keyframes swing {
   0% { transform: rotate(0deg) translateY(0); }
-  25% { transform: rotate(3deg) translateY(-2px); }
-  50% { transform: rotate(0deg) translateY(1px); }
-  75% { transform: rotate(-3deg) translateY(-2px); }
+  25% { transform: rotate(5deg) translateY(-2px); }
+  50% { transform: rotate(0deg) translateY(0); }
+  75% { transform: rotate(-5deg) translateY(-2px); }
   100% { transform: rotate(0deg) translateY(0); }
 }
 
@@ -945,6 +945,7 @@ body {
     
 
 }
+
 
 
 
