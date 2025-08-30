@@ -255,12 +255,14 @@ body {
   width: 100%;
   height: auto;
   max-width: 180px;
-  opacity: 0;
+  opacity: 1; /* Biar langsung kelihatan */
+  transition: transform 0.3s ease;
 }
 
 .mempelai .img-bismillah {
-    margin-top: 2rem;
-    filter: brightness(10%), contrast(120%);
+  margin-top: 2rem;
+  filter: brightness(1.1) contrast(1.2);
+  max-width: 200px;
 }
 
 .mempelai h3 {
@@ -922,6 +924,7 @@ body {
     
 
 }
+
 
 
 
