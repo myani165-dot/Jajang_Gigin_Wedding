@@ -164,6 +164,23 @@ body {
     background-color: var(--denim);
 }
 
+/* Ornamen bunga */
+.ornamen-bunga {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: inline-block;
+  animation: swing 3s ease-in-out infinite;
+}
+
+/* Animasi goyang lembut */
+@keyframes swing {
+  0% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(5deg) translateY(-2px); }
+  50% { transform: rotate(0deg) translateY(0); }
+  75% { transform: rotate(-5deg) translateY(-2px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
 .honey p {
     color: #cae3fa;
     font-family: 'sorts mill goudy', serif;
@@ -924,6 +941,7 @@ body {
     
 
 }
+
 
 
 
