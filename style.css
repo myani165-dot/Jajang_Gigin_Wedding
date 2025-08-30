@@ -192,7 +192,7 @@ body {
     height: 3px;
     width: 0;
     /* mulai 0, nanti melebar */
-    background: #cae3fa;
+    background: #cae3fa !important;
     margin: 12px auto 0;
     /* auto = center */
     border-radius: 2px;
@@ -915,6 +915,7 @@ body {
     
 
 }
+
 
 
 
