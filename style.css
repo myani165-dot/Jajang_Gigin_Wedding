@@ -161,80 +161,49 @@ body {
 }
 
 .honey {
-  background-color: var(--denim);
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-/* Ornamen bunga */
-/* Ornamen bunga */
-.ornamen-bunga {
-  width: 5px;           /* kecil saja */
-  display: block;
-  margin: 0 auto 10px;   /* auto = center, ada jarak bawah */
-  animation: swing 3s ease-in-out infinite;
-}
-
-/* Animasi goyang lembut */
-@keyframes swing {
-  0% { transform: rotate(0deg) translateY(0); }
-  25% { transform: rotate(5deg) translateY(-2px); }
-  50% { transform: rotate(0deg) translateY(0); }
-  75% { transform: rotate(-5deg) translateY(-2px); }
-  100% { transform: rotate(0deg) translateY(0); }
+    background-color: var(--denim);
 }
 
 .honey p {
-  color: #cae3fa;
-  font-family: 'Sorts Mill Goudy', serif;
-  font-style: italic;
-  font-size: 1.7rem;
-  margin-top: 1.5rem;
-  position: relative;
-  z-index: 2;
+    color: #cae3fa;
+    font-family: 'sorts mill goudy', serif;
+    font-style: italic;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
 }
 
-.quote-wrapper {
-  text-align: center;
-  margin: 2rem auto;
+/* pastikan paragraf bisa "ngepas kontennya" */
+.quote {
+    display: inline-block;      /* penting: biar width garis bisa di-center */
+    position: relative;
+    text-align: center;
+    /* kalau paragraf mau tetap center */
+    max-width: 900px;
+    /* opsional: batasi lebar paragraf */
 }
 
-/* pastikan paragraf bisa "ngepas kontennya" */ 
-.quote { 
-    display: inline-block; /* penting: biar width garis bisa di-center */ 
-    position: relative; 
-    text-align: center; /* kalau paragraf mau tetap center */ 
-    max-width: 900px; /* opsional: batasi lebar paragraf */ 
-    line-height: 1.6; } 
-
-/* garis bawah */ 
-.quote::after{ 
-    content: ""; 
-    display: block; 
-    height: 2px; 
-    width: 0; /* mulai 0, nanti melebar */ 
-    background: #cae3fa !important; 
-    margin: 14px auto 0; 
-    /* auto = center */ 
-    border-radius: 2px; /* animasi melebar */ 
-    transform: scaleX(0); 
-    transform-origin: center; 
-    transition: transform 1s ease, opacity 1s ease; 
-}
-    
+/* garis bawah */
+.quote::after{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    /* mulai 0, nanti melebar */
+    background: var(--denim);
+    margin: 12px auto 0;
+    /* auto = center */
+    border-radius: 2px;
+    transition: width 0.8s ease;
     /* animasi melebar */  
-.quote.active {
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 1s ease, opacity 1s ease;
 }
 
 /* saat terlihat di layar (ditambah lewat JS), garis melebar */
 .quote.active::after {
     width: 160px;
     /* ubah angka ini untuk panjang garis */
-    opacity: 1;
-    transform: scaleX(1);
 }
 
 /* responsif: garis sedikit lebih pendek di HP */
@@ -244,6 +213,7 @@ body {
         /* ubah angka ini untuk panjang garis di HP */
     }
 }
+
 
 .mempelai {
     background-color: #446e922b;
@@ -945,6 +915,7 @@ body {
     
 
 }
+
 
 
 
