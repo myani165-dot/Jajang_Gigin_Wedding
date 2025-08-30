@@ -254,8 +254,7 @@ body {
     font-family: 'sort mill goudy', serif;
     font-style: italic;
     text-align: center;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin: 0 1.5rem;
 }
 
 .elegant-frame {
@@ -277,7 +276,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.mempelai .img-bismillah {
+.img-bismillah {
   margin-top: 2rem;
   filter: brightness(1.1) contrast(1.2);
   max-width: 200px;
@@ -942,6 +941,7 @@ body {
     
 
 }
+
 
 
 
