@@ -199,30 +199,27 @@ body {
   margin: 2rem auto;
 }
 
-/* pastikan paragraf bisa "ngepas kontennya" */
-.quote {
-  display: inline-block;
-  position: relative;
-  max-width: 900px;
-  line-height: 1.6;
-  color: #cae3fa;
-  font-size: 1.3rem;
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-/* garis bawah */
-.quote::after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 0;
-  background: linear-gradient(90deg, #cae3fa, #ffffffcc);
-  margin: 14px auto 0;
-  border-radius: 2px;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 1s ease;
+/* pastikan paragraf bisa "ngepas kontennya" */ 
+.quote { 
+    display: inline-block; /* penting: biar width garis bisa di-center */ 
+    position: relative; 
+    text-align: center; /* kalau paragraf mau tetap center */ 
+    max-width: 900px; /* opsional: batasi lebar paragraf */ 
+    line-height: 1.6; } 
+
+/* garis bawah */ 
+.quote::after{ 
+    content: ""; 
+    display: block; 
+    height: 2px; 
+    width: 0; /* mulai 0, nanti melebar */ 
+    background: #cae3fa !important; 
+    margin: 14px auto 0; 
+    /* auto = center */ 
+    border-radius: 2px; /* animasi melebar */ 
+    transform: scaleX(0); 
+    transform-origin: center; 
+    transition: transform 1s ease, opacity 1s ease; 
 }
     
     /* animasi melebar */  
@@ -948,6 +945,7 @@ body {
     
 
 }
+
 
 
 
