@@ -399,8 +399,8 @@
   </script>
 
   <script>
+    
     document.addEventListener('DOMContentLoaded',function () {
-         const faders = document.querySelectorAll('.fade');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) entry.target.classList.add('active');
@@ -409,9 +409,8 @@
 
       document.querySelectorAll('.quote').forEach((el) =>
     observer.observe(el));
-        fader.forEach((fader)=> {
-            observer.observe(fader);
     });
+  
   </script>
 
   <script>
@@ -620,6 +619,7 @@
 
 
 </html>
+
 
 
 
