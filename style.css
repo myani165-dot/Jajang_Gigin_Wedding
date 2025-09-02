@@ -1,0 +1,975 @@
+:root {
+    --denim: #446d92;
+    --shadow: 0 2px 2px rgb(0 0 0/2);
+    --shadows: 0 2px 2px rgb(0 0 0/0.5); 
+    --panel-bg: #eaf1f7;     /* papan besar */
+  --card-bg: #ffffff;      /* kotak kecil */
+  --accent-light: #d1e0f0; /* garis halus */
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: 'Work Sans', sans-serif;
+    min-height: 4000px;
+    margin: 0;
+    padding: 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('img/fixing.png');
+    z-index: -1;
+    filter: brightness(85%) contrast(85%);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background-color: linear-gradient(to bottom, rgba(68, 109, 146, 0.8), rgba(68, 109, 146, 0.8));
+}
+
+.hero h1, .hero h2, .hero h4 {
+    text-shadow: var(--shadow);
+    text-align: center;
+    margin: 0;
+}
+
+.hero h1 {
+    font-family: 'Italianno', cursive;
+    font-size: 6rem;
+}
+
+.hero h2 {
+    font-size: 1.6rem;
+}
+
+.hero h4 {
+    font-size: 1.4rem;
+}
+
+.hero a {
+    color: white;
+    background-color: var(--denim);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.hero a:hover {
+    color: var(--denim);
+    background-color: white;
+    box-shadow: 0 4px 4px rgb(0,0,0/0.8);
+    transform: scale(1.05);
+}
+
+.mynavbar {
+    background-color: rgba(255, 255, 255, 0) !important;
+    
+}
+
+.mynavbar .offcanvas {
+    height: 47vh;
+}
+
+.mynavbar .navbar-brand,
+.mynavbar .offcanvas-title {
+    font-family: 'Italianno', cursive;
+    font-size: 2rem;
+}
+
+.mynavbar .nav-link {
+    text-transform: uppercase;
+}
+
+.home {
+    margin: 0;
+    padding-top: 15rem;
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* full layar */
+    }
+
+/* overlay bagian atas */
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:50%; /* sedikit lebih dari setengah biar tumpang tindih */
+    /* ga jadi deh tumpangtindihnya cuma satu layar berdua */
+    background: url('img/fix2.png') center top/cover no-repeat;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-position: top;
+    -webkit-mask-image: background linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: top;
+    pointer-events: none;
+    z-index: -3;
+}
+
+/* overlay bagian bawah */
+.home::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; /* sedikit lebih dari setengah */
+    background: url('img/bg.png') center bottom/cover no-repeat;
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 120%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-position: top;
+    -webkit-mask-image: background linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: top; 
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.home h1, .home h2, .home h4, .home p {
+    color: var(--denim);
+    text-align: center;
+    margin: 0;
+    text-shadow: var(--shadows);
+}
+
+.home h1 {
+    font-family: 'Italianno', cursive;
+    font-size: 5rem;
+}
+
+.home h2 {
+    font-family: 'work sans', sans-serif;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+.home h4 {
+    font-size: 1.6rem;
+}
+
+.home p {
+    font-size: 1.4rem;
+    font-family: "Sorts Mill Goudy", serif;
+    font-style: italic;
+}
+
+.home a {
+    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 1.7rem;
+    font-style: italic;
+    color: white;
+    background-color: var(--denim);
+    transition: all 0.3s ease;
+    border-radius: 30px;
+}
+
+.home a:hover {
+    color:  black;
+    background-color: white;    
+    box-shadow: 0 4px 4px rgb(0,0,0/0.8);
+    transform: scale(1.05);
+}
+
+.honey {
+    background-color: var(--denim);
+}
+
+.honey p {
+    color: #cae3fa;
+    font-family: 'sorts mill goudy', serif;
+    font-style: italic;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.quote-wrapper {
+    text-align: center;
+    margin: 2rem;
+}
+
+/* pastikan paragraf bisa "ngepas kontennya" */
+.quote {
+    display: inline-block;      /* penting: biar width garis bisa di-center */
+    position: relative;
+    text-align: center;
+    /* kalau paragraf mau tetap center */
+    max-width: 900px;
+    /* opsional: batasi lebar paragraf */
+    line-height: 1.6;
+}
+
+/* garis bawah */
+.quote::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    /* mulai 0, nanti melebar */
+    background: #cae3fa !important;
+    margin: 14px auto 0;
+    /* auto = center */
+    border-radius: 2px;
+    
+    /* animasi melebar */  
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+/* saat terlihat di layar (ditambah lewat JS), garis melebar */
+.quote.active::after {
+    width: 160px;
+    /* ubah angka ini untuk panjang garis */
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* responsif: garis sedikit lebih pendek di HP */
+@media (max-width: 576px) {
+    .quote.active::after {
+        width: 120px;
+        /* ubah angka ini untuk panjang garis di HP */
+    }
+}
+
+.mempelai {
+    background-color: #446e922b;
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* full layar */
+}
+
+.mempelai p {
+    font-size: 1.6rem;
+    color: #446d92;
+    font-family: 'Sorts Mill Goudy', serif;
+    font-style: italic;
+    text-align: center;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.elegant-frame {
+  border: 5px solid #f0f0f0; /* Warna bingkai */
+  border-radius: 50%; /* Membuat bingkai melingkar */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  transition: transform 0.3s; /* Efek transisi saat hover */
+}
+
+.elegant-frame:hover {
+  transform: scale(1.05); /* Zoom efek saat hover */
+}
+
+/* Foto pasangan */
+.mempelai .couple img {
+  width: 100%;
+  height: auto;
+  max-width: 180px;
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.mempelai .img-bismillah {
+    margin-top: 2rem;
+    filter: brightness(10%), contrast(120%);
+}
+
+.mempelai h3 {
+    font-family: 'italianno', cursive;
+    margin-top: 1rem;
+    font-size: 3rem;
+    color: #935e0e;
+}
+
+.mempelai .couple {
+    margin-top: 100px;
+}
+
+.mempelai .couple h3 {
+    font-family: 'carattere', cursive;
+    font-size: 2.5rem;
+}
+
+.mempelai .couple p {
+    font-size: 1.6rem;
+    color: #446d92;
+    font-family: 'Sorts Mill Goudy', serif;
+    font-style: italic;
+}
+
+.info {
+        position: relative;
+        width: 100%;
+        height: 100%; /* full layar */
+        background-color: var(--denim); /* ganti dengan warna tema kamu */
+        font-family: 'Sorts Mill Goudy',serif;
+        font-style: italic;
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .info .section{
+        background-color: transparent;
+    }
+    .info h1 {
+        margin-top: 1rem;
+        font-family: 'italianno',cursive;
+        font-size: 6rem;
+    }
+    .info p {
+        font-size: 1.5rem;
+    }
+    .card-custom {
+        width: 90%;
+        margin: 30px auto;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        background-image: url('img/bg susut.png');
+        background-size: cover;
+        background-position: center;
+        min-height: 650px;
+        
+    }
+    
+        .card-img-top {
+        margin-top: 1.5rem;
+        object-fit: cover;
+        width: 90%;
+        border-radius: 6%;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px -10px 20px rgba(0,0,0,0.3); /* Efek bayangan */
+        transition: transform 0.3s; /* Efek transisi saat hover */
+    }
+    .card-resepsi {
+        width: 90%;
+        margin: 30px auto;
+        min-height: 310px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        background-image: url('img/bg1.png');
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 30px;
+    }
+    .card-body {
+        flex: 1;
+        color:var(--denim);
+        padding: 25px 30px 10px;
+    }
+    .card-body h2{
+        font-family: 'sorts mill goudy', serif;
+        text-transform: uppercase;
+        text-decoration: underline;
+        font-size: 2rem;
+        text-align: center;
+    }
+    .card-body p{
+        margin-left: 1.6rem;
+        text-align: left;
+    }
+    .garis {
+        text-align: center;
+        display: inline-block;
+        position: relative;
+    }
+    .garis::after {
+        content: "";
+        display: block;
+        width: 200px;
+        height: 2px;
+        background: var(--denim);
+        margin: 15px auto 0;
+    }
+    .icon-text {
+        position: relative;
+        padding-left: 20px;
+        font-size: 1.4rem;
+    }
+    .icon-text i{
+        font-size: 1.6rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .info a {
+        background-color: #446d92;
+        color: white;
+        padding: 10px 17px;
+        border-radius: 20px;
+        border: none;
+        font-size: 1.5rem;
+    }
+    
+.plus .section{
+    background-color: transparent;
+}
+.plus {
+    margin-top: -3.3rem;
+    position: relative;
+    width: 100%;
+    min-height: 55vh;
+    }
+
+/* overlay bagian atas */
+.plus::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/bg\ biru.png') center top/cover no-repeat;
+    mask-image: linear-gradient(to bottom, rgb(255, 255, 255,0.2), rgba(255, 255, 255, 0.2));
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-position: top;
+    -webkit-mask-image: background linear-gradient(to bottom, rgb(255, 255, 255,0.2), rgba(255, 255, 255, 0.2));
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: top;
+    pointer-events: none;
+    z-index: -3;
+}
+
+.plus .container {
+    position: relative;
+    z-index: 1;
+}
+.plus h1 {
+        font-family: 'Sorts Mill Goudy', serif;
+        font-style: italic;
+        font-size: 2.3rem;
+        margin-top: 3rem;
+        color: var(--denim);
+    }
+
+.plus .card-body {
+    width: 90%;
+    margin: 30px auto;
+    color: var(--denim);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    border: 2px solid var(--denim);
+    position: relative;
+    z-index: 5;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.plus .card-body h5 {
+    font-family: 'times new roman', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.plus .card-body p {
+    margin-left: 1rem;
+    font-family: 'Times New Roman', serif;
+    text-align: left;
+}
+
+.gift .section{
+        background-color: transparent;
+}
+.gift {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    color: var(--denim);
+    font-family: 'Sorts Mill Goudy', serif;
+    font-style: italic;
+}
+
+/* overlay bagian atas */
+.gift::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/bg\ biru.png') center top/cover no-repeat;
+    mask-image: linear-gradient(to bottom, rgb(255, 255, 255,0.2), rgba(255, 255, 255, 0.2));
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-position: top;
+    -webkit-mask-image: background linear-gradient(to bottom, rgb(255, 255, 255,0.2), rgba(255, 255, 255, 0.2));
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: top;
+    pointer-events: none;
+    z-index: -3;
+}
+
+.gift .container {
+    position: relative;
+    z-index: 1;
+}
+.atm-card {
+    position: relative;
+    display: flexbox;
+    width: 100%;
+}
+.atm-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    background-position: center;
+}
+.img-qr {
+    width: 130px;
+}
+.atm-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.atm-text h5 {
+    margin-top: 1.6rem;
+}
+.atm-text h5, .atm-text p {
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-align: center;
+}
+.qr-text h3 {
+    font-size: 1.7rem;
+    text-align: center
+}
+.qr-text {
+    position: absolute;
+    text-align: center;
+    
+}
+.gift h1 {
+    font-family: 'italianno', cursive;
+    font-size: 5rem;
+    color: var(--denim);
+    text-align: center;
+    margin-top: 2rem;
+}
+.gift p {
+    font-family: 'Sorts Mill Goudy', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    
+}
+.gift a {
+    background-color: #445d92;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 20px;
+        border: none;
+        font-size: 1.4rem;
+        margin-top: 2rem;
+}
+.btn1 {
+    position: absolute;
+    margin-top: 3px;
+    background-color: #ffffff70;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Toast style */
+  .denim-toast {
+    background-color: #446e92b1;
+    color: white;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    animation: slideUp 0.5s ease;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Efek bounce */
+.btn-bounce {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Bounce saat hover */
+.btn-bounce:hover {
+  transform: scale(1.05) translateY(-3px);
+  animation: bounce 0.6s ease;
+}
+
+/* Keyframes bounce */
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-6px); }
+  50%  { transform: translateY(0); }
+  70%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+/* Efek glow halus */
+.btn-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 8px rgba(68, 109, 146, 0.5), 0 0 15px rgba(68, 109, 146, 0.3);
+  }
+  to {
+    box-shadow: 0 0 15px rgba(68, 109, 146, 0.8), 0 0 30px rgba(68, 109, 146, 0.5);
+  }
+}
+/* state dasar (selalu ada, tapi transparan & geser) */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* state ketika collapse benar-benar terbuka */
+.fade-slide.showing {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  .sparkle {
+    opacity: 0.3;
+    animation: twinkle 2s infinite;
+  }
+  .sparkle:nth-child(1) { animation-delay: 0s; }
+  .sparkle:nth-child(2) { animation-delay: 1s; }
+  .sparkle:nth-child(3) { animation-delay: 1.5s; }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.6); }
+    50% { opacity: 1; transform: scale(1.3); }
+  }
+
+  .divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.divider span {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, #446d92, #d63384) !important;
+  opacity: 0.8;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.6s ease;
+  border-radius: 3px;
+}
+
+.divider i {
+  font-size: 1.8rem;
+  color: #446d92;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.3s;
+}
+
+.address-card {
+    width: 90%;
+    margin: 30px auto;
+    color: var(--denim);
+    background-color: #cae3fa;
+    border-radius: 30px;
+    border: 2px solid var(--denim);
+    position: relative;
+    z-index: 5;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+.big-toast {
+    min-width: 200px;
+    max-width: 250px;
+    border-radius: 1rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    text-wrap: balance;
+    word-wrap: break-word;
+    font-size: 1.5rem;
+}
+
+.btn2 {
+    background-color: #05557090;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Bounce effect */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Saat aktif (muncul di layar) */
+.divider.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.divider.show span {
+  transform: scaleX(1);
+}
+
+.divider.show i {
+  opacity: 1;
+  animation: bounce 1s ease;
+}
+
+/* ---------- Background & Section ---------- */
+.rsvv { 
+    background-color: #446d92;
+}
+
+.rsvp-section { 
+    background: #edf2fb; 
+    border-radius:20px; 
+    padding:40px 20px; 
+    width:90%; 
+    margin:0 auto; 
+}
+
+.overlap-card { 
+    position:relative; 
+    margin-top:-12px; 
+    z-index: 1; 
+    background-color: #9cadce; 
+    padding:20px; 
+}
+
+.rs {
+    font-family: 'Sorts Mill Goudy', serif !important;
+    font-style: italic !important;
+}
+
+.rs h2 {
+    font-size: 2rem;
+}
+.rs p {
+    font-size: 1.6rem;
+}
+.card { 
+    border-radius: 15px; 
+}
+.card .overlap-card .stats p{
+    font-size: 1.6rem;
+}
+.btn8 { background-color: #446d92; 
+      padding: 6px 15px;
+       float: left;
+       color: white;
+      }
+.stat-card h4, .stat-card small { 
+    color:#fff;
+    font-size: 1.5rem;
+}
+/* Container komentar */
+
+/* Pagination minimalis */
+#pagination .page-item {
+    margin: 0 3px;          /* jarak antar angka */
+}
+
+#pagination .page-item .page-link {
+    background: none !important;   /* hilangkan background */
+    border: none !important;       /* hilangkan border */
+    color: #fff;                   /* warna angka */
+    padding: 6px 8px;
+    font-weight: normal;
+}
+
+#pagination .page-item.active .page-link {
+    font-weight: bold;             /* halaman aktif tebal */
+    color: #446d92;
+    transform: scale(1.05);
+}
+
+#pagination .page-item .page-link:hover {
+    background: none !important;
+    border: none !important;
+    text-decoration: underline;    /* opsional, efek hover */
+    cursor: pointer;
+}
+#comment-container {
+  max-height: 400px;     /* tinggi maksimal area komentar */
+  overflow-y: auto;      /* aktifkan scroll vertikal */
+  padding-right: 6px;    /* kasih ruang biar scrollbar gak nutup teks */
+  margin-bottom: 1rem;   /* jarak bawah sebelum pagination */
+}
+
+/* biar scrollbar lebih tipis & enak dilihat */
+#comment-container::-webkit-scrollbar {
+  width: 6px;
+}
+#comment-container::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 3px;
+
+.audio-icon-wrapper {
+    width : 4rem;
+    height: 4rem;
+    font-size: 4rem;
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2rem;
+    cursor: pointer;
+    border: 5px solid #ffffff;  /* border putih */
+    border-radius: 50%;         /* biar bulat */
+    background-color: #446d92;  /* warna denim di dalam */
+    color: #ffffff; 
+    animation: rotating 4s linear infinite;
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    z-index: 10;
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Media Queries */ 
+/* Extra Large */ 
+@media (min-width: 1200px) { 
+    .mempelai .couple img { 
+        max-width: 300px; 
+    } 
+} 
+
+/* laptop */ 
+@media (max-width: 992px) { 
+    html{ font-size: 75%; 
+        } 
+    
+    .simply-countdown > .simply-section { 
+        padding: 70px; 
+    } 
+    
+    .mempelai .couple img { 
+        max-width: 260px; 
+    } 
+} 
+
+/* tablet */ 
+@media (max-width: 768px) { 
+    html{ font-size: 65%; 
+        } 
+    
+    .hero h4 { margin-top: 700px; 
+             } 
+    
+    .hero a { 
+        margin-bottom: 100px; 
+    } 
+    
+    .simply-countdown > .simply-section { 
+        padding: 60px; margin: 5px; 
+    } 
+    .simply-countdown > .simply-section .simply-amount { 
+        font-size: 2.5rem;
+    } .simply-countdown > .simply-section .simply-word { 
+        font-size: 1.2rem; 
+    }  
+    
+    .mempelai .couple img { 
+        max-width: 220px; 
+    } 
+} 
+
+/* mobile phone */
+@media (max-width: 576px) { 
+    html{ font-size: 57%; 
+        } 
+    
+    .hero h4 { 
+        margin-top: 350px; 
+    } 
+    
+    .hero a { 
+        margin-bottom: 75px; 
+    } 
+    
+    .simply-countdown > .simply-section { 
+        padding: 30px; 
+        margin: 1px; 
+        margin-top: 1rem; 
+        margin-bottom: 25rem; } 
+    .simply-countdown > .simply-section .simply-amount { 
+        font-size: 2rem; } 
+    .simply-countdown > .simply-section .simply-word { 
+        font-size: 1rem; 
+    } 
+
+    .home p {
+        font-size: 1 rem;
+    }
+    .home h4 { 
+        margin-top: 96%; 
+    } 
+    .home h2{ 
+        margin-top: 1rem; 
+    } 
+    .mempelai h3 { 
+        font-size: 2.5rem; 
+    }
+   
+}
+
+
+
+
+
