@@ -847,7 +847,10 @@ body {
   word-wrap: break-word;
   white-space: normal;
 }
-
+/* biar scrollbar lebih tipis & enak dilihat */
+#comment-container::-webkit-scrollbar {
+  width: 6px;
+}
 
 .audio-icon-wrapper {
     width : 4rem;
@@ -966,6 +969,7 @@ body {
     }
    
 }
+
 
 
 
