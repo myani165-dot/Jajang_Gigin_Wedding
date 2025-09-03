@@ -948,18 +948,27 @@ body {
   100% { transform: rotate(-10deg); }
 }
 
-/* Style dasar bunga */
+/* Style bunga */
 .bunga {
-    position: absolute; /* bukan fixed */
-    bottom: 0;
-    width: 150px;
-    animation: goyang 5s ease-in-out infinite;
-    display: none; /* default hide */
+  position: absolute;
+  bottom: 0;
+    opacity: 0.2;
+  width: 150px; /* sesuaikan ukuran */
+    height: 250px;
+  transform-origin: bottom center; /* pangkal jadi titik putar */
+  animation: goyang 10s ease-in-out infinite;
+  display: none; /* default hide */
 }
 
 .bunga-kiri { left: 0; }
 .bunga-kanan { right: 0; }
 
+/* Animasi goyang */
+@keyframes goyang {
+  0% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg); }
+}
 /* Tampilkan hanya untuk HP & tablet */
 @media (max-width: 992px) {
   .bunga { display: block; }
@@ -1062,6 +1071,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
