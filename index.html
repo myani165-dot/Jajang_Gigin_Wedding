@@ -419,86 +419,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
  <script>
-const root = document.documentElement;
-const audioWrapper = document.querySelector('.audio-icon-wrapper');
-const audioIcon = audioWrapper.querySelector('i');
-const song = document.querySelector('#song');
-let isPlaying = false;
-
-// --- Audio ---
-function playAudio(){
-  song.volume = 0.1;
-  audioWrapper.style.display = 'flex';
-  song.play();
-  isPlaying = true;
-}
-
-audioWrapper.onclick = () => {
-  if(isPlaying){
-    song.pause();
-    audioIcon.classList.replace('bi-disc','bi-pause-circle');
-  } else {
-    song.play();
-    audioIcon.classList.replace('bi-pause-circle','bi-disc');
-  }
-  isPlaying = !isPlaying;
-};
-
-// --- Scroll control ---
-let scrollLocked = true;
-let lastTouchY = 0;
-
-function lockScroll(top){
-  const hardLock = e => {
-    if(scrollLocked){
-      if(e.type==='wheel' && e.deltaY<0) e.preventDefault();
-      if(e.type==='touchmove' && e.touches[0].clientY>lastTouchY) e.preventDefault();
-    }
-    if(e.type==='touchmove') lastTouchY = e.touches[0].clientY;
-  };
-  window.addEventListener('wheel', hardLock,{passive:false});
-  window.addEventListener('touchstart', e => lastTouchY=e.touches[0].clientY,{passive:false});
-  window.addEventListener('touchmove', hardLock,{passive:false});
-}
-
-function enableScroll(){
-  scrollLocked = false;
-}
-
-function goToHome(){
+document.addEventListener('DOMContentLoaded', function() {
+  const hero = document.querySelector('#hero');
   const home = document.querySelector('#home');
-  const top = home.offsetTop;
-  window.scrollTo({top, behavior:'smooth'});
-  history.replaceState(null,null,window.location.pathname + window.location.search);
-  enableScroll(); // aktifkan scroll
-  playAudio();
-}
+  const audioWrapper = document.querySelector('.audio-icon-wrapper');
+  const audioIcon = audioWrapper.querySelector('i');
+  const song = document.querySelector('#song');
+  let isPlaying = false;
 
-// --- Link #home ---
-document.querySelectorAll('a[href="#home"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    e.preventDefault();
-    goToHome();
-  });
-});
+  function playAudio() {
+    song.volume = 0.1;
+    audioWrapper.style.display = 'flex';
+    song.play();
+    isPlaying = true;
+  }
 
-// --- Jika reload di #home, scroll otomatis ---
-window.addEventListener('load', ()=>{
-  if(location.hash === "#home"){
-    const home = document.querySelector('#home');
-    window.scrollTo({top: home.offsetTop, behavior:'auto'});
-    history.replaceState(null,null,location.pathname + location.search);
-    enableScroll();
+  audioWrapper.onclick = () => {
+    if (isPlaying) {
+      song.pause();
+      audioIcon.classList.replace('bi-disc', 'bi-pause-circle');
+    } else {
+      song.play();
+      audioIcon.classList.replace('bi-pause-circle', 'bi-disc');
+    }
+    isPlaying = !isPlaying;
+  };
+
+  function goToHome() {
+    // Scroll ke home
+    const top = home.offsetTop;
+    window.scrollTo({ top, behavior: 'smooth' });
+
+    // Sembunyikan hero
+    hero.style.display = 'none';
+
+    // Aktifkan scroll normal
+    document.body.style.overflow = 'auto';
+
+    // Mainkan audio
     playAudio();
   }
+
+  // Lock scroll awal sebelum klik
+  document.body.style.overflow = 'hidden';
+
+  // Event tombol #home
+  document.querySelectorAll('a[href="#home"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      goToHome();
+    });
+  });
+
+  // Jika reload di #home, langsung scroll & hapus hash
+  window.addEventListener('load', () => {
+    if (location.hash === "#home") {
+      window.scrollTo({ top: home.offsetTop, behavior: 'auto' });
+      hero.style.display = 'none';
+      document.body.style.overflow = 'auto';
+      history.replaceState(null, null, location.pathname + location.search);
+    }
+  });
 });
-
-// --- Disable scroll awal sebelum klik ---
-lockScroll(window.pageYOffset || document.documentElement.scrollTop);
-root.style.scrollBehavior='auto';
 </script>
-
-
   
   <script>
     document.addEventListener('DOMContentLoaded', function () {  
@@ -782,6 +765,7 @@ loadComments();
 
 
 </html>
+
 
 
 
