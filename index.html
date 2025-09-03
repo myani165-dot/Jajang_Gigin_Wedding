@@ -423,8 +423,9 @@ const root = document.documentElement;
 const audioWrapper = document.querySelector('.audio-icon-wrapper');
 const audioIcon = audioWrapper.querySelector('i');
 const song = document.querySelector('#song');
-let isPlaying = false, lastTouchY = 0;
+let isPlaying = false;
 
+// --- Audio ---
 function playAudio(){
   song.volume = 0.1;
   audioWrapper.style.display = 'flex';
@@ -443,9 +444,13 @@ audioWrapper.onclick = () => {
   isPlaying = !isPlaying;
 };
 
+// --- Scroll control ---
+let scrollLocked = true;
+let lastTouchY = 0;
+
 function lockScroll(top){
   const hardLock = e => {
-    if(window.scrollY <= top){
+    if(scrollLocked){
       if(e.type==='wheel' && e.deltaY<0) e.preventDefault();
       if(e.type==='touchmove' && e.touches[0].clientY>lastTouchY) e.preventDefault();
     }
@@ -456,16 +461,20 @@ function lockScroll(top){
   window.addEventListener('touchmove', hardLock,{passive:false});
 }
 
+function enableScroll(){
+  scrollLocked = false;
+}
+
 function goToHome(){
   const home = document.querySelector('#home');
   const top = home.offsetTop;
   window.scrollTo({top, behavior:'smooth'});
   history.replaceState(null,null,window.location.pathname + window.location.search);
-  lockScroll(top);
+  enableScroll(); // aktifkan scroll
   playAudio();
 }
 
-// Link #home
+// --- Link #home ---
 document.querySelectorAll('a[href="#home"]').forEach(a=>{
   a.addEventListener('click', e=>{
     e.preventDefault();
@@ -473,20 +482,22 @@ document.querySelectorAll('a[href="#home"]').forEach(a=>{
   });
 });
 
-// Jika reload di #home, langsung scroll & hapus hash
+// --- Jika reload di #home, scroll otomatis ---
 window.addEventListener('load', ()=>{
   if(location.hash === "#home"){
     const home = document.querySelector('#home');
     window.scrollTo({top: home.offsetTop, behavior:'auto'});
     history.replaceState(null,null,location.pathname + location.search);
+    enableScroll();
+    playAudio();
   }
 });
 
-// Disable scroll awal sebelum klik
-let top0 = window.pageYOffset || document.documentElement.scrollTop;
-window.onscroll = ()=>window.scrollTo(0, top0);
+// --- Disable scroll awal sebelum klik ---
+lockScroll(window.pageYOffset || document.documentElement.scrollTop);
 root.style.scrollBehavior='auto';
 </script>
+
 
   
   <script>
@@ -771,6 +782,7 @@ loadComments();
 
 
 </html>
+
 
 
 
