@@ -964,6 +964,10 @@ body {
     } 
     #home {
         height: 130vh;
+    }
+    .home h4 {
+        margin-top: 50%;
+    }
 } 
 
 /* mobile phone */
@@ -1009,6 +1013,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
