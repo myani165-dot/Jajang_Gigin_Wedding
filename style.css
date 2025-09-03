@@ -13,6 +13,7 @@ body {
     min-height: 4000px;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .hero::before {
@@ -1067,6 +1068,7 @@ body {
         height: 120vh;
     }
 }
+
 
 
 
