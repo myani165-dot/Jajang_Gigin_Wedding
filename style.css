@@ -1003,10 +1003,11 @@ body {
    .mempelai .img-arab {
        max-width: 100px;
    }
-    .home {
-        max-height: 2000px;
+    #home {
+        height: 130vh;
     }
 }
+
 
 
 
