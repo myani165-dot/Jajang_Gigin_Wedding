@@ -994,7 +994,7 @@ body {
         font-size: 1 rem;
     }
     .home h4 { 
-        margin-top: 96%; 
+        margin-top: 50%; 
     } 
     .home h2{ 
         margin-top: 1rem; 
@@ -1009,6 +1009,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
