@@ -962,6 +962,8 @@ body {
     .mempelai .couple img { 
         max-width: 220px; 
     } 
+    #home {
+        height: 130vh;
 } 
 
 /* mobile phone */
@@ -1007,6 +1009,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
