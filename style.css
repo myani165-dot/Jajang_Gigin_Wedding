@@ -967,8 +967,11 @@ body {
     .mempelai h3 { 
         font-size: 2.5rem; 
     }
-   
+   .mempelai .img-arab {
+       max-width: 100px;
+   }
 }
+
 
 
 
