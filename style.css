@@ -836,6 +836,18 @@ body {
     text-decoration: underline;    /* opsional, efek hover */
     cursor: pointer;
 }
+#comment-container {
+  max-height: 400px;    /* tinggi area komentar */
+  overflow-y: auto;     /* aktifkan scroll vertikal */
+  padding-right: 6px;
+  margin-bottom: 1rem;
+}
+
+#comment-list {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
 
 .audio-icon-wrapper {
     width : 4rem;
@@ -954,6 +966,7 @@ body {
     }
    
 }
+
 
 
 
