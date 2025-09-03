@@ -998,7 +998,7 @@ body {
         font-size: 1 rem;
     }
     .home h4 { 
-        margin-top: 50%; 
+        margin-top: 30%; 
     } 
     .home h2{ 
         margin-top: 1rem; 
@@ -1007,12 +1007,13 @@ body {
         font-size: 2.5rem; 
     }
    .mempelai .img-arab {
-       max-width: 100px;
+       max-width: 180px;
    }
     #home {
         height: 130vh;
     }
 }
+
 
 
 
