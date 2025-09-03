@@ -281,19 +281,19 @@
        <div class="row justify-content-center text-center mb-4" style="color:#446d92;">
         <div class="col-4">
           <div class="card p-3 shadow-sm">
-            <h4 id="count-hadir" class="fw-bold">0</h4>
+            <h4 id="count-Hadir" class="fw-bold">0</h4>
             <small>Hadir</small>
           </div>
         </div>
         <div class="col-4">
           <div class="card p-3 shadow-sm">
-            <h4 id="count-tidak" class="fw-bold">0</h4>
+            <h4 id="count-Tidak" class="fw-bold">0</h4>
             <small>Tidak Hadir</small>
           </div>
         </div>
         <div class="col-4">
           <div class="card p-3 shadow-sm">
-            <h4 id="count-ragu" class="fw-bold">0</h4>
+            <h4 id="count-Ragu" class="fw-bold">0</h4>
             <small>Masih Ragu</small>
           </div>
         </div>
@@ -305,9 +305,9 @@
         <textarea class="form-control mb-3" name="Ucapan" rows="3" placeholder="Ucapan" required></textarea>
         <select class="form-select mb-3" name="Kehadiran" required>
           <option value="" disabled selected>Konfirmasi Kehadiran</option>
-          <option value="hadir">Hadir</option>
-          <option value="tidak">Tidak Hadir</option>
-          <option value="ragu">Masih Ragu</option>
+          <option value="Hadir">Hadir</option>
+          <option value="Tidak">Tidak Hadir</option>
+          <option value="Ragu">Masih Ragu</option>
         </select>
         <button type="submit" class="btn btn8 btn-primary">Kirim</button>
       </form>
@@ -603,15 +603,15 @@
         // Update statistik 
         function updateStats() { 
             const total = commentsData.length;
-            const hadir = commentsData.filter(c => c.Kehadiran=='hadir').length; 
-            const tidak = commentsData.filter(c => c.Kehadiran=='tidak').length; 
-            const ragu = commentsData.filter(c => c.Kehadiran=='ragu').length; 
+            const hadir = commentsData.filter(c => c.Kehadiran=='Hadir').length; 
+            const tidak = commentsData.filter(c => c.Kehadiran=='Tidak').length; 
+            const ragu = commentsData.filter(c => c.Kehadiran=='Ragu').length; 
             const totalUcapan = commentsData.filter(c => { 
                 const ucapanText = (c.Ucapan || "").toString().trim(); return ucapanText.length > 0; }).length; 
             
-            document.getElementById('count-hadir').innerText = hadir; 
-            document.getElementById('count-tidak').innerText = tidak; 
-            document.getElementById('count-ragu').innerText = ragu; 
+            document.getElementById('count-Hadir').innerText = Hadir; 
+            document.getElementById('count-Tidak').innerText = Tidak; 
+            document.getElementById('count-Ragu').innerText = Ragu; 
             document.getElementById("ucapan-count").textContent = totalUcapan; 
         } 
         
@@ -725,6 +725,7 @@ loadComments();
 
 
 </html>
+
 
 
 
