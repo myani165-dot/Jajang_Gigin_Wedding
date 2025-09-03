@@ -68,25 +68,6 @@ body {
     transform: scale(1.05);
 }
 
-.mynavbar {
-    background-color: rgba(255, 255, 255, 0) !important;
-    
-}
-
-.mynavbar .offcanvas {
-    height: 47vh;
-}
-
-.mynavbar .navbar-brand,
-.mynavbar .offcanvas-title {
-    font-family: 'Italianno', cursive;
-    font-size: 2rem;
-}
-
-.mynavbar .nav-link {
-    text-transform: uppercase;
-}
-
 .home {
     margin: 0;
     padding-top: 15rem;
@@ -946,9 +927,9 @@ body {
 /* Animasi goyang bunga */
 /* Animasi bunga kiri (default) */
 @keyframes goyang-kiri {
-  0% { transform: rotate(-10deg); }
-  50% { transform: rotate(10deg); }
-  100% { transform: rotate(-10deg); }
+  0% { transform: rotate(-5deg); }
+  50% { transform: rotate(0deg); }
+  100% { transform: rotate(-5deg); }
 }
 
 /* Animasi bunga kanan (mirrored) */
@@ -962,7 +943,7 @@ body {
 .bunga {
   position: absolute;
   bottom: 0;
-    opacity: 0.1;
+    opacity: 0.5;
   transform-origin: bottom center; /* pangkal jadi titik putar */
   display: none; /* default hide */
 }
@@ -1082,6 +1063,7 @@ body {
         height: 120vh;
     }
 }
+
 
 
 
