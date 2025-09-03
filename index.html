@@ -576,8 +576,7 @@
   // Ambil parameter nama dan sapaan dari URL
   const urlParams = new URLSearchParams(window.location.search);
   const nama = urlParams.get('n') || '';
-  const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
-  
+     
   const sapaanEl = document.querySelector('#sapaan');
   const namaEl = document.querySelector('#nama-undangan');
   if(sapaanEl) sapaanEl.innerText = pronoun;
@@ -726,6 +725,7 @@ loadComments();
 
 
 </html>
+
 
 
 
