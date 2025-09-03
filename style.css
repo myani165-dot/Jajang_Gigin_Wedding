@@ -950,15 +950,13 @@ body {
 
 /* Style dasar bunga */
 .bunga {
-  position: fixed;
-  bottom: 0;
-  width: 80px; /* sesuaikan ukuran */
-  z-index: 50;
-  animation: goyang 3s ease-in-out infinite;
-  display: none; /* default hide */
+    position: absolute; /* bukan fixed */
+    bottom: 0;
+    width: 150px;
+    animation: goyang 5s ease-in-out infinite;
+    display: none; /* default hide */
 }
 
-/* Posisi kiri dan kanan */
 .bunga-kiri { left: 0; }
 .bunga-kanan { right: 0; }
 
@@ -1064,6 +1062,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
