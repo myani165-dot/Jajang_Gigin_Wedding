@@ -943,7 +943,9 @@ body {
 .bunga {
   position: absolute;
   bottom: 0;
-    opacity: 0.5;
+     max-width: 100%;
+  overflow-x: hidden;
+    opacity: 0.8;
   transform-origin: bottom center; /* pangkal jadi titik putar */
   display: none; /* default hide */
 }
@@ -953,12 +955,14 @@ body {
     width: 150px; /* sesuaikan ukuran */
     height: 250px;
     animation: goyang-kiri 10s ease-in-out infinite;
+    transform: translateX(-20%); /* geser keluar dikit */
 }
 .bunga-kanan { 
     right: 0; 
     width: 150px; /* sesuaikan ukuran */
     height: 250px;
     animation: goyang-kanan 10s ease-in-out infinite;
+    transform: translateX(20%); /* geser keluar dikit */
 }
 
 /* Tampilkan hanya untuk HP & tablet */
@@ -1063,6 +1067,7 @@ body {
         height: 120vh;
     }
 }
+
 
 
 
