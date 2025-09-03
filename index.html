@@ -418,89 +418,76 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-  <script>
-    const rootElement = document.querySelector(":root");
-    const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
-    const audioIcon = document.querySelector('.audio-icon-wrapper i');
-    const song = document.querySelector('#song');
-    let isPlaying = false; 
-      
-      function disableScroll() { 
-          scrollTop = window.pageYOffset || document.documentElement.scrollTop; 
-          scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-          
-          window.onscroll = function() { 
-              window.scrollTo(scrollTop, scrollLeft); 
-          } 
-          
-              rootElement.style.scrollBehavior = 'auto'; 
-      }
+ <script>
+const root = document.documentElement;
+const audioWrapper = document.querySelector('.audio-icon-wrapper');
+const audioIcon = audioWrapper.querySelector('i');
+const song = document.querySelector('#song');
+let isPlaying = false, lastTouchY = 0;
 
-
-    function enableScroll(){
-  window.onscroll = function() {}
-  rootElement.style.scrollBehavior = 'auto'; // jangan smooth sama sekali
-  playAudio();
-
-  const homeSection = document.querySelector('#home');
-  const homeTop = homeSection.offsetTop;
-
-  // Snap langsung ke #home
-  window.scrollTo(0, homeTop);
-
-  // Hapus hash dari URL
-  history.replaceState(null, null, ' ');
-
-  // Lock: cegah scroll lebih atas dari #home
-  window.addEventListener('scroll', () => {
-    if(window.scrollY < homeTop){
-      window.scrollTo(0, homeTop); // langsung snap balik
-    }
-  });
-
-  // Untuk jaga-jaga kalau pakai wheel atau touch ke atas
-  function hardLock(e){
-    if(window.scrollY <= homeTop){
-      if(e.type === 'wheel' && e.deltaY < 0) e.preventDefault();
-      if(e.type === 'touchmove' && e.touches[0].clientY > lastTouchY) e.preventDefault();
-    }
-    if(e.type === 'touchmove') lastTouchY = e.touches[0].clientY;
-  }
-
-  let lastTouchY = 0;
-  window.addEventListener('touchstart', (e) => {
-    lastTouchY = e.touches[0].clientY;
-  }, {passive: false});
-  window.addEventListener('wheel', hardLock, {passive: false});
-  window.addEventListener('touchmove', hardLock, {passive: false});
+function playAudio(){
+  song.volume = 0.1;
+  audioWrapper.style.display = 'flex';
+  song.play();
+  isPlaying = true;
 }
 
-    function playAudio(){
-      song.volume = 0.1;
-      audioIconWrapper.style.display = 'flex';
-      song.play();
-      isPlaying = true;
+audioWrapper.onclick = () => {
+  if(isPlaying){
+    song.pause();
+    audioIcon.classList.replace('bi-disc','bi-pause-circle');
+  } else {
+    song.play();
+    audioIcon.classList.replace('bi-pause-circle','bi-disc');
+  }
+  isPlaying = !isPlaying;
+};
+
+function lockScroll(top){
+  const hardLock = e => {
+    if(window.scrollY <= top){
+      if(e.type==='wheel' && e.deltaY<0) e.preventDefault();
+      if(e.type==='touchmove' && e.touches[0].clientY>lastTouchY) e.preventDefault();
     }
+    if(e.type==='touchmove') lastTouchY = e.touches[0].clientY;
+  };
+  window.addEventListener('wheel', hardLock,{passive:false});
+  window.addEventListener('touchstart', e => lastTouchY=e.touches[0].clientY,{passive:false});
+  window.addEventListener('touchmove', hardLock,{passive:false});
+}
 
-    audioIconWrapper.onclick = function(){
-      if(isPlaying){
-        song.pause();
-        audioIcon.classList.remove('bi-disc');
-        audioIcon.classList.add('bi-pause-circle');
-      } else {
-        song.play();
-        audioIcon.classList.add('bi-disc');
-        audioIcon.classList.remove('bi-pause-circle');
-      }
+function goToHome(){
+  const home = document.querySelector('#home');
+  const top = home.offsetTop;
+  window.scrollTo({top, behavior:'smooth'});
+  history.replaceState(null,null,window.location.pathname + window.location.search);
+  lockScroll(top);
+  playAudio();
+}
 
-      isPlaying=!isPlaying;
-    }
+// Link #home
+document.querySelectorAll('a[href="#home"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    e.preventDefault();
+    goToHome();
+  });
+});
 
-    // if(!localStorage.getItem('opened')) {
-      // disableScroll();
-    // }
-    disableScroll();
-  </script>
+// Jika reload di #home, langsung scroll & hapus hash
+window.addEventListener('load', ()=>{
+  if(location.hash === "#home"){
+    const home = document.querySelector('#home');
+    window.scrollTo({top: home.offsetTop, behavior:'auto'});
+    history.replaceState(null,null,location.pathname + location.search);
+  }
+});
+
+// Disable scroll awal sebelum klik
+let top0 = window.pageYOffset || document.documentElement.scrollTop;
+window.onscroll = ()=>window.scrollTo(0, top0);
+root.style.scrollBehavior='auto';
+</script>
+
   
   <script>
     document.addEventListener('DOMContentLoaded', function () {  
