@@ -172,7 +172,7 @@ body {
     font-family: 'Sorts Mill Goudy', serif;
     font-size: 1.7rem;
     font-style: italic;
-    color: white;
+    color: #fff !important;
     background-color: var(--denim) !important;
     transition: all 0.3s ease;
     border-radius: 30px;
@@ -1088,6 +1088,7 @@ body {
         height: 120vh;
     }
 }
+
 
 
 
