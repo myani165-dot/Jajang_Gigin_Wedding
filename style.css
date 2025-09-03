@@ -914,18 +914,22 @@ body {
 .rotate-left { transform: rotate(-45deg); }
 .rotate-right { transform: rotate(45deg); }
 
+#honey {
+  position: relative; /* biar absolute ngikut section ini */
+}
+
 .flower-wrapper {
   position: absolute;
-  top: 10px;      /* jarak dari atas halaman */
-  left: 50%;      /* posisikan di tengah */
+  top: 10px;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  pointer-events: none; /* biar nggak ganggu klik */
+  pointer-events: none;
 }
 
 .flower {
-  width: 60px;   /* atur ukuran bunga, kecil aja */
-  height: auto;  /* biar proporsional */
+  width: 60px;
+  height: auto;
   animation: spinFlower 12s linear infinite;
 }
 
@@ -933,6 +937,7 @@ body {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
+
 
 /* Animasi goyang bunga */
 @keyframes goyang {
@@ -1057,6 +1062,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
