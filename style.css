@@ -953,9 +953,9 @@ body {
 
 /* Animasi bunga kanan (mirrored) */
 @keyframes goyang-kanan {
-  0% { transform: rotate(10deg); }
+  0% { transform: rotate(0deg); }
   50% { transform: rotate(-10deg); }
-  100% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
 }
 
 /* Style bunga */
@@ -975,8 +975,8 @@ body {
 }
 .bunga-kanan { 
     right: 0; 
-    width: 200px; /* sesuaikan ukuran */
-    height: 300px;
+    width: 150px; /* sesuaikan ukuran */
+    height: 250px;
     animation: goyang-kanan 15s ease-in-out infinite;
 }
 
@@ -1088,6 +1088,7 @@ body {
         height: 120vh;
     }
 }
+
 
 
 
