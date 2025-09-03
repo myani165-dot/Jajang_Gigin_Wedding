@@ -836,20 +836,6 @@ body {
     text-decoration: underline;    /* opsional, efek hover */
     cursor: pointer;
 }
-#comment-container {
-  max-height: 400px;     /* tinggi maksimal area komentar */
-  overflow-y: auto;      /* aktifkan scroll vertikal */
-  padding-right: 6px;    /* kasih ruang biar scrollbar gak nutup teks */
-  margin-bottom: 1rem;   /* jarak bawah sebelum pagination */
-}
-
-/* biar scrollbar lebih tipis & enak dilihat */
-#comment-container::-webkit-scrollbar {
-  width: 6px;
-}
-#comment-container::-webkit-scrollbar-thumb {
-  background: #aaa;
-  border-radius: 3px;
 
 .audio-icon-wrapper {
     width : 4rem;
@@ -968,6 +954,7 @@ body {
     }
    
 }
+
 
 
 
