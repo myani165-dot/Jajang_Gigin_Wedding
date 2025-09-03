@@ -860,7 +860,7 @@ body {
     bottom: 2.5rem;
     right: 2rem;
     cursor: pointer;
-    border: 5px solid #ffffff;  /* border putih */
+    border: 3px solid #ffffff;  /* border putih */
     border-radius: 50%;         /* biar bulat */
     background-color: #446d92;  /* warna denim di dalam */
     color: #ffffff; 
@@ -914,12 +914,33 @@ body {
 .rotate-left { transform: rotate(-45deg); }
 .rotate-right { transform: rotate(45deg); }
 
+.flower-wrapper {
+    position: absolute;  /* supaya bisa mengambang di atas section */
+    top: 10px;           /* jarak dari atas */
+    left: 50%;           /* posisi horizontal di tengah */
+    transform: translateX(-50%);
+    pointer-events: none; /* biar nggak mengganggu klik */
+    z-index: 10;
+}
+
+.flower {
+    width: 50px;        /* sesuaikan ukuran */
+    animation: floatFlower 6s ease-in-out infinite; /* animasi lembut */
+}
+
+@keyframes floatFlower {
+    0% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+    25% { transform: translateX(-48%) translateY(-10px) rotate(5deg); }
+    50% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+    75% { transform: translateX(-52%) translateY(-10px) rotate(-5deg); }
+    100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+}
 
 
 /* Media Queries */ 
 /* Extra Large */ 
 @media (min-width: 1200px) { 
-    .mempelai .couple img { 
+    .mempelai .couple img .img-arab { 
         max-width: 300px; 
     } 
 } 
@@ -933,7 +954,7 @@ body {
         padding: 70px; 
     } 
     
-    .mempelai .couple img { 
+    .mempelai .couple img . img-arab { 
         max-width: 260px; 
     } 
 } 
@@ -959,7 +980,7 @@ body {
         font-size: 1.2rem; 
     }  
     
-    .mempelai .couple img { 
+    .mempelai .couple img .img-arab { 
         max-width: 220px; 
     } 
     #home {
@@ -1013,6 +1034,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
