@@ -915,25 +915,23 @@ body {
 .rotate-right { transform: rotate(45deg); }
 
 .flower-wrapper {
-    position: absolute;  /* supaya bisa mengambang di atas section */
-    top: 10px;           /* jarak dari atas */
-    left: 50%;           /* posisi horizontal di tengah */
-    transform: translateX(-50%);
-    pointer-events: none; /* biar nggak mengganggu klik */
-    z-index: 10;
+  position: absolute;
+  top: 10px;      /* jarak dari atas halaman */
+  left: 50%;      /* posisikan di tengah */
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none; /* biar nggak ganggu klik */
 }
 
 .flower {
-    width: 50px;        /* sesuaikan ukuran */
-    animation: floatFlower 6s ease-in-out infinite; /* animasi lembut */
+  width: 60px;   /* atur ukuran bunga, kecil aja */
+  height: auto;  /* biar proporsional */
+  animation: spinFlower 12s linear infinite;
 }
 
-@keyframes floatFlower {
-    0% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-    25% { transform: translateX(-48%) translateY(-10px) rotate(5deg); }
-    50% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-    75% { transform: translateX(-52%) translateY(-10px) rotate(-5deg); }
-    100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+@keyframes spinFlower {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* Animasi goyang bunga */
@@ -1059,6 +1057,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
