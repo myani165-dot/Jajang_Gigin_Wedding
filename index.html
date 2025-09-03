@@ -419,68 +419,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
  <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const hero = document.querySelector('#hero');
-  const home = document.querySelector('#home');
-  const audioWrapper = document.querySelector('.audio-icon-wrapper');
-  const audioIcon = audioWrapper.querySelector('i');
-  const song = document.querySelector('#song');
-  let isPlaying = false;
 
-  function playAudio() {
-    song.volume = 0.1;
-    audioWrapper.style.display = 'flex';
-    song.play();
-    isPlaying = true;
-  }
+    const rootElement = document.querySelector(":root");
+    const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+    const audioIcon = document.querySelector('.audio-icon-wrapper i');
+    const song = document.querySelector('#song');
+    let isPlaying = false; 
+      
+      function disableScroll() {
+          document.body.style.overflow = 'hidden';
+      }
 
-  audioWrapper.onclick = () => {
-    if (isPlaying) {
-      song.pause();
-      audioIcon.classList.replace('bi-disc', 'bi-pause-circle');
-    } else {
-      song.play();
-      audioIcon.classList.replace('bi-pause-circle', 'bi-disc');
-    }
-    isPlaying = !isPlaying;
-  };
 
-  function goToHome() {
-    // Scroll ke home
-    const top = home.offsetTop;
-    window.scrollTo({ top, behavior: 'smooth' });
+    function enableScroll() {
+  document.body.style.overflow = ''; // aktifkan scroll
+  playAudio();
 
-    // Sembunyikan hero
-    hero.style.display = 'none';
+  const homeSection = document.querySelector('#home');
+  const homeTop = homeSection.offsetTop;
 
-    // Aktifkan scroll normal
-    document.body.style.overflow = 'auto';
+  // Snap sekali ke #home
+  window.scrollTo({ top: homeTop, behavior: 'auto' });
 
-    // Mainkan audio
-    playAudio();
-  }
+  // Hapus hash URL
+  history.replaceState(null, null, ' ');
 
-  // Lock scroll awal sebelum klik
-  document.body.style.overflow = 'hidden';
-
-  // Event tombol #home
-  document.querySelectorAll('a[href="#home"]').forEach(a => {
-    a.addEventListener('click', e => {
+  // Hard lock sederhana: mencegah scroll ke atas dari #home
+  function hardLock(e){
+    if(window.scrollY < homeTop){
       e.preventDefault();
-      goToHome();
-    });
-  });
-
-  // Jika reload di #home, langsung scroll & hapus hash
-  window.addEventListener('load', () => {
-    if (location.hash === "#home") {
-      window.scrollTo({ top: home.offsetTop, behavior: 'auto' });
-      hero.style.display = 'none';
-      document.body.style.overflow = 'auto';
-      history.replaceState(null, null, location.pathname + location.search);
+      window.scrollTo({ top: homeTop, behavior: 'auto' });
     }
-  });
-});
+  }
+
+  window.addEventListener('wheel', hardLock, { passive: false });
+  window.addEventListener('touchmove', hardLock, { passive: false });
+}
+
+    function playAudio(){
+      song.volume = 0.1;
+      audioIconWrapper.style.display = 'flex';
+      song.play();
+      isPlaying = true;
+    }
+
+    audioIconWrapper.onclick = function(){
+      if(isPlaying){
+        song.pause();
+        audioIcon.classList.remove('bi-disc');
+        audioIcon.classList.add('bi-pause-circle');
+      } else {
+        song.play();
+        audioIcon.classList.add('bi-disc');
+        audioIcon.classList.remove('bi-pause-circle');
+      }
+
+      isPlaying=!isPlaying;
+    }
+
+    // if(!localStorage.getItem('opened')) {
+      // disableScroll();
+    // }
+    disableScroll();
+  
 </script>
   
   <script>
@@ -765,6 +766,7 @@ loadComments();
 
 
 </html>
+
 
 
 
