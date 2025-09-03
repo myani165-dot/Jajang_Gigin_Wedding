@@ -603,15 +603,15 @@
         // Update statistik 
         function updateStats() { 
             const total = commentsData.length;
-            const hadir = commentsData.filter(c => c.Kehadiran=='Hadir').length; 
-            const tidak = commentsData.filter(c => c.Kehadiran=='Tidak').length; 
-            const ragu = commentsData.filter(c => c.Kehadiran=='Ragu').length; 
+            const hadir = commentsData.filter(c => c.Kehadiran=='hadir').length; 
+            const tidak = commentsData.filter(c => c.Kehadiran=='tidak').length; 
+            const ragu = commentsData.filter(c => c.Kehadiran=='ragu').length; 
             const totalUcapan = commentsData.filter(c => { 
                 const ucapanText = (c.Ucapan || "").toString().trim(); return ucapanText.length > 0; }).length; 
             
-            document.getElementById('count-Hadir').innerText = Hadir; 
-            document.getElementById('count-Tidak').innerText = Tidak; 
-            document.getElementById('count-Ragu').innerText = Ragu; 
+            document.getElementById('count-hadir').innerText = Hadir; 
+            document.getElementById('count-tidak').innerText = Tidak; 
+            document.getElementById('count-ragu').innerText = Ragu; 
             document.getElementById("ucapan-count").textContent = totalUcapan; 
         } 
         
@@ -725,6 +725,7 @@ loadComments();
 
 
 </html>
+
 
 
 
