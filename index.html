@@ -378,34 +378,54 @@
     const song = document.querySelector('#song');
     let isPlaying = false; 
       
-      function disableScroll() {
-          document.body.style.overflow = 'hidden';
+      function disableScroll() { 
+          scrollTop = window.pageYOffset || document.documentElement.scrollTop; 
+          scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+          
+          window.onscroll = function() { 
+              window.scrollTo(scrollTop, scrollLeft); 
+          } 
+          
+              rootElement.style.scrollBehavior = 'auto'; 
       }
 
 
-    function enableScroll() {
-  document.body.style.overflow = ''; // aktifkan scroll
+    function enableScroll(){
+  window.onscroll = function() {}
+  rootElement.style.scrollBehavior = 'auto'; // jangan smooth sama sekali
   playAudio();
 
   const homeSection = document.querySelector('#home');
   const homeTop = homeSection.offsetTop;
 
-  // Snap sekali ke #home
-  window.scrollTo({ top: homeTop, behavior: 'auto' });
+  // Snap langsung ke #home
+  window.scrollTo(0, homeTop);
 
-  // Hapus hash URL
+  // Hapus hash dari URL
   history.replaceState(null, null, ' ');
 
-  // Hard lock sederhana: mencegah scroll ke atas dari #home
-  function hardLock(e){
+  // Lock: cegah scroll lebih atas dari #home
+  window.addEventListener('scroll', () => {
     if(window.scrollY < homeTop){
-      e.preventDefault();
-      window.scrollTo({ top: homeTop, behavior: 'auto' });
+      window.scrollTo(0, homeTop); // langsung snap balik
     }
+  });
+
+  // Untuk jaga-jaga kalau pakai wheel atau touch ke atas
+  function hardLock(e){
+    if(window.scrollY <= homeTop){
+      if(e.type === 'wheel' && e.deltaY < 0) e.preventDefault();
+      if(e.type === 'touchmove' && e.touches[0].clientY > lastTouchY) e.preventDefault();
+    }
+    if(e.type === 'touchmove') lastTouchY = e.touches[0].clientY;
   }
 
-  window.addEventListener('wheel', hardLock, { passive: false });
-  window.addEventListener('touchmove', hardLock, { passive: false });
+  let lastTouchY = 0;
+  window.addEventListener('touchstart', (e) => {
+    lastTouchY = e.touches[0].clientY;
+  }, {passive: false});
+  window.addEventListener('wheel', hardLock, {passive: false});
+  window.addEventListener('touchmove', hardLock, {passive: false});
 }
 
     function playAudio(){
@@ -706,6 +726,7 @@ loadComments();
 
 
 </html>
+
 
 
 
