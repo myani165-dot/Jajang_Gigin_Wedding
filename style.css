@@ -914,7 +914,7 @@ body {
 .rotate-left { transform: rotate(-45deg); }
 .rotate-right { transform: rotate(45deg); }
 
-#honey {
+#honey, #rsvv, #info {
   position: relative; /* biar absolute ngikut section ini */
 }
 
@@ -968,7 +968,7 @@ body {
 /* Media Queries */ 
 /* Extra Large */ 
 @media (min-width: 1200px) { 
-    .mempelai .couple img .img-arab { 
+    .mempelai .couple img, .img-arab { 
         max-width: 300px; 
     } 
 } 
@@ -982,7 +982,7 @@ body {
         padding: 70px; 
     } 
     
-    .mempelai .couple img . img-arab { 
+    .mempelai .couple img, .img-arab { 
         max-width: 260px; 
     } 
 } 
@@ -1008,7 +1008,7 @@ body {
         font-size: 1.2rem; 
     }  
     
-    .mempelai .couple img .img-arab { 
+    .mempelai .couple img, .img-arab { 
         max-width: 220px; 
     } 
     #home {
@@ -1062,6 +1062,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
