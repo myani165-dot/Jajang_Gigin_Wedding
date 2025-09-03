@@ -446,6 +446,7 @@ body {
     -webkit-mask-position: top;
     pointer-events: none;
     z-index: -3;
+    opacity: 0.2;
 }
 
 .plus .container {
@@ -516,6 +517,7 @@ body {
     -webkit-mask-position: top;
     pointer-events: none;
     z-index: -3;
+    opacity: 0.2;
 }
 
 .gift .container {
@@ -953,15 +955,21 @@ body {
   position: absolute;
   bottom: 0;
     opacity: 0.2;
-  width: 150px; /* sesuaikan ukuran */
-    height: 250px;
   transform-origin: bottom center; /* pangkal jadi titik putar */
   animation: goyang 10s ease-in-out infinite;
   display: none; /* default hide */
 }
 
-.bunga-kiri { left: 0; }
-.bunga-kanan { right: 0; }
+.bunga-kiri { 
+    left: 0; 
+    width: 150px; /* sesuaikan ukuran */
+    height: 250px;
+}
+.bunga-kanan { 
+    right: 0; 
+    width: 250px; /* sesuaikan ukuran */
+    height: 350px;
+}
 
 /* Animasi goyang */
 @keyframes goyang {
@@ -1071,6 +1079,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
