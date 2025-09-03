@@ -933,9 +933,9 @@ body {
 }
 
 @keyframes swayFlower {
-  0%   { transform: rotate(-45deg); }
-  50%  { transform: rotate(-35deg); }
-  100% { transform: rotate(-45deg); }
+  0%   { transform: rotate(-10deg); }
+  50%  { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg); }
 }
 
 
@@ -1064,6 +1064,7 @@ body {
         height: 130vh;
     }
 }
+
 
 
 
