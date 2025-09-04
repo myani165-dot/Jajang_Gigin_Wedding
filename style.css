@@ -1029,6 +1029,49 @@ html, body {
     margin-top: 1.5rem;
 }
 
+.section-hope {
+  min-height: 100vh;
+  text-align: center;
+  color: #fff;
+}
+
+/* Bagian atas: gambar setengah + gradient */
+.hope-top {
+  height: 50vh; /* atur tinggi bagian gambar */
+  background: linear-gradient(to bottom, rgba(156,173,206,0), #446e922b),
+              url('img/fix.jpg') center/cover no-repeat;
+  padding: 1rem;
+}
+
+/* Bagian bawah: warna solid */
+.hope-bottom {
+  height: 50vh; /* sisanya */
+  background: #9cadce;
+  padding: 1rem;
+}
+
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366; /* warna hijau WA */
+  color: white;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-wa:hover {
+  background-color: #1ebe5d; /* versi lebih gelap saat hover */
+  color: white;
+}
+
+.btn-wa i {
+  font-size: 1.2rem;
+}
+
 
 /* Tampilkan hanya untuk HP & tablet */
 @media (max-width: 992px) {
@@ -1133,6 +1176,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
