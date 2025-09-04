@@ -703,7 +703,7 @@ html, body {
 .address-card {
     width: 90%;
     margin: 30px auto;
-    color: var(--denim);
+    color: black;
     background-color: #cae3fa;
     border-radius: 30px;
     border: 2px solid var(--denim);
@@ -1098,6 +1098,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
