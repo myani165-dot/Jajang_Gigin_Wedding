@@ -994,6 +994,36 @@ html, body {
   transform: translateX(20%);
 }
 
+.doa {
+    background-color: #9cadce;
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+    text-align: center;
+}
+.doa h3, .doa h4 {
+     color: #446d92;
+    font-family: 'sorts mill goudy', serif;
+    font-style: italic;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.doa h3 {
+    font-size: 1.7rem;
+  }
+.doa h3, .doa h4 {
+    font-size: 1.6rem;
+}
+.doa p {
+    color: #446d92;
+    font-family: 'sorts mill goudy', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
 
 /* Tampilkan hanya untuk HP & tablet */
 @media (max-width: 992px) {
@@ -1098,6 +1128,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
