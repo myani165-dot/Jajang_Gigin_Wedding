@@ -930,9 +930,9 @@ body {
 /* Animasi goyang bunga */
 /* Animasi bunga kiri (default) */
 @keyframes goyang-kiri {
-  0% { transform: rotate(5deg); }
-  50% { transform: rotate(0deg); }
-  100% { transform: rotate(5deg); }
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
 }
 
 /* Animasi bunga kanan (mirrored) */
@@ -959,6 +959,7 @@ body {
     height: 250px;
     animation: goyang-kiri 10s ease-in-out infinite;
     transform: translateX(-20%); /* geser keluar dikit */
+    overflow: hidden;
 }
 .bunga-kanan { 
     right: 0; 
@@ -966,6 +967,7 @@ body {
     height: 250px;
     animation: goyang-kanan 10s ease-in-out infinite;
     transform: translateX(20%); /* geser keluar dikit */
+    overflow: hidden;
 }
 
 /* Tampilkan hanya untuk HP & tablet */
@@ -1070,6 +1072,7 @@ body {
         height: 120vh;
     }
 }
+
 
 
 
