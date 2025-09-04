@@ -173,6 +173,11 @@ html, body {
 
 .honey {
     background-color: var(--denim);
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+    text-align: center;
 }
 
 .honey p {
@@ -185,20 +190,16 @@ html, body {
 }
 
 .quote-wrapper {
-    text-align: center;
-    margin: 2rem;
+    margin: 0 auto;
 }
 
-/* pastikan paragraf bisa "ngepas kontennya" */
 .quote {
-    display: inline-block;      /* penting: biar width garis bisa di-center */
-    position: relative;
-    text-align: center;
-    /* kalau paragraf mau tetap center */
+    display: block;
     max-width: 900px;
-    /* opsional: batasi lebar paragraf */
+    margin: 0 auto;
     line-height: 1.6;
 }
+
 
 /* garis bawah */
 .quote::after{
@@ -911,6 +912,7 @@ html, body {
   position: relative; /* biar ikut flow section honey */
   margin-bottom: 20px; /* beri jarak dari teks */
   pointer-events: none; /* biar tidak ganggu klik */
+    overflow: hidden;
 }
 
 .flower {
@@ -919,6 +921,8 @@ html, body {
   display: inline-block;
   animation: swayFlower 20s ease-in-out infinite; /* animasi goyang */
   transform-origin: center bottom; /* titik pivot goyang di bawah tengah */
+    max-width: 100%;
+    height: auto;
 }
 
 @keyframes swayFlower {
@@ -1078,6 +1082,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
