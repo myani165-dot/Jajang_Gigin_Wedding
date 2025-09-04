@@ -999,7 +999,7 @@ html, body {
 }
 
 .doa {
-    background-color: linear-gradient (to bottom, #446d92, #7cabd6);
+    background-color: linear-gradient(to bottom, #446d92, #7cabd6);
     padding: 2rem;
     box-sizing: border-box;
     width: 100%;
@@ -1061,7 +1061,7 @@ html, body {
 /* Bagian bawah: warna solid */
 .hope-bottom {
   height: 50vh; /* sisanya */
-  background-color: linear-gradient (to bottom, white, #446e922b);
+  background-color: linear-gradient(to bottom, white, #446e922b);
   padding: 1rem;
 }
 
@@ -1196,6 +1196,7 @@ html, body {
    }
     
 }
+
 
 
 
