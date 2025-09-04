@@ -995,7 +995,7 @@ html, body {
 }
 
 .doa {
-    background-color: #afeeee;
+    background-color: #e0ffff;
     padding: 2rem;
     box-sizing: border-box;
     width: 100%;
@@ -1010,16 +1010,16 @@ html, body {
     margin-top: 1.5rem;
 }
 .doa h3 {
-    font-size: 1.7rem;
+    font-size: 2.5rem;
   }
 .doa h3, .doa h4 {
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 .doa p {
     color: #446d92;
     font-family: 'sorts mill goudy', serif;
     font-style: italic;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     text-align: center;
     margin-top: 1.5rem;
 }
@@ -1128,6 +1128,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
