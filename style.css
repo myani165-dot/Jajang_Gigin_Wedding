@@ -930,9 +930,9 @@ body {
 /* Animasi goyang bunga */
 /* Animasi bunga kiri (default) */
 @keyframes goyang-kiri {
-  0% { transform: rotate(-5deg); }
+  0% { transform: rotate(5deg); }
   50% { transform: rotate(0deg); }
-  100% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
 }
 
 /* Animasi bunga kanan (mirrored) */
@@ -1070,6 +1070,7 @@ body {
         height: 120vh;
     }
 }
+
 
 
 
