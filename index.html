@@ -475,8 +475,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Snap ke Home
   window.scrollTo({ top: homeTop, behavior: 'auto' });
 
-  // Delay sebentar sebelum aktifkan hardLock
-  setTimeout(() => {
+  // Delay pakai requestAnimationFrame agar scroll stabil
+  requestAnimationFrame(() => {
     function hardLock(e){
       if(window.scrollY < homeTop - 5){  // toleransi 5px
         e.preventDefault();
@@ -485,11 +485,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     window.addEventListener('wheel', hardLock, { passive: false });
     window.addEventListener('touchmove', hardLock, { passive: false });
-  }, 50); // 50ms delay supaya scroll stabil
+  });
 
   // Play audio
   playAudio();
 });
+
 
 });
   </script>
@@ -776,6 +777,7 @@ loadComments();
 
 
 </html>
+
 
 
 
