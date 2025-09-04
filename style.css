@@ -15,9 +15,6 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
-* {
-  outline: 1px solid red;
-}
 
 .hero::before {
     content: '';
@@ -79,6 +76,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh; /* full layar */
+    overflow: hidden;
     }
 
 /* overlay bagian atas */
@@ -901,8 +899,9 @@ body {
 .rotate-left { transform: rotate(-45deg); }
 .rotate-right { transform: rotate(45deg); }
 
-#honey, #rsvv, #info {
+#honey, #rsvv, #info, home {
   position: relative; /* biar absolute ngikut section ini */
+    overflow: hidden;
 }
 
 .flower-wrapper {
@@ -1071,6 +1070,7 @@ body {
         height: 120vh;
     }
 }
+
 
 
 
