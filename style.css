@@ -1039,16 +1039,22 @@ html, body {
 .hope-top {
   position: relative;
   height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  color: #446d92; /* pakai hitam biar kontras sama putih */
+  padding: 1rem;
+  overflow: hidden;
   background: url('img/fix.png') center/cover no-repeat;
 }
 
 .hope-top::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom, rgba(255,255,255,0), rgba(255,255,255,1)
-  );
+  inset: 0; /* isi full */
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+  z-index: 1; /* gradient di atas gambar */
 }
 
 /* Bagian bawah: warna solid */
@@ -1056,6 +1062,11 @@ html, body {
   height: 50vh; /* sisanya */
   background: #446e922b;
   padding: 1rem;
+}
+
+.hope-top .container {
+  position: relative;
+  z-index: 2; /* teks di atas gradient */
 }
 
 .btn-wa {
@@ -1073,6 +1084,7 @@ html, body {
 
 .hope-bottom h2 {
     font-family: 'Italianno', cursive;
+    font-size: 3rem;
 }
 
 .btn-wa:hover {
@@ -1183,6 +1195,7 @@ html, body {
    }
     
 }
+
 
 
 
