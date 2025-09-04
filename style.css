@@ -999,7 +999,7 @@ html, body {
 }
 
 .doa {
-    background-color: linear-gradient(to bottom, #446d92, #7cabd6);
+    background: #7cabd6;
     padding: 2rem;
     box-sizing: border-box;
     width: 100%;
@@ -1196,6 +1196,7 @@ html, body {
    }
     
 }
+
 
 
 
