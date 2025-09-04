@@ -1038,7 +1038,7 @@ html, body {
 /* Bagian atas: gambar setengah + gradient */
 .hope-top {
   height: 50vh; /* atur tinggi bagian gambar */
-  background: linear-gradient(to bottom, rgba(156,173,206,0), #446e922b),
+  background: linear-gradient(to bottom, rgba(68,110,146,0), rgba(68,110,146,0.17)),
               url('img/fix.png') center/cover no-repeat;
   padding: 1rem;
 }
@@ -1062,6 +1062,14 @@ html, body {
   text-decoration: none;
   transition: background 0.3s ease;
 }
+
+.hope h2 {
+    font-family: 'italianno', cursive;
+    font-size: 2.5rem;
+
+.card-logo {
+    background-color: transparent;
+    border: none;
 
 .btn-wa:hover {
   background-color: #1ebe5d; /* versi lebih gelap saat hover */
@@ -1176,6 +1184,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
