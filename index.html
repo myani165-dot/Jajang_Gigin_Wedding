@@ -447,14 +447,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // ------------------------
   // Disable scroll awal di Hero
   // ------------------------
-  function lockScroll(e) {
+ // Hanya block scroll, jangan block klik
+function lockScroll(e) {
+  if (e.type === 'wheel' || e.type === 'touchmove') {
     e.preventDefault();
-    e.stopPropagation();
-    return false;
   }
+}
+window.addEventListener('wheel', lockScroll, { passive: false });
+window.addEventListener('touchmove', lockScroll, { passive: false });
 
-  window.addEventListener('wheel', lockScroll, { passive: false });
-  window.addEventListener('touchmove', lockScroll, { passive: false });
   window.scrollTo(0, 0);
 
   // Hapus hash tapi tetap simpan query
@@ -777,6 +778,7 @@ loadComments();
 
 
 </html>
+
 
 
 
