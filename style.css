@@ -890,7 +890,7 @@ html, body {
 /* ===== Class dasar animasi ===== */
 .anim {
   opacity: 0;
-  transition: all 3.5s ease;
+  transition: all 3s ease;
 }
 
 /* muncul saat scroll */
@@ -1067,7 +1067,7 @@ html, body {
 
 .hope-top .container {
   position: relative;
-  z-index: 2; /* teks di atas gradient */
+  z-index: 5; /* teks di atas gradient */
 }
 
 .btn-wa {
@@ -1196,6 +1196,7 @@ html, body {
    }
     
 }
+
 
 
 
