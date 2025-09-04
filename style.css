@@ -1045,12 +1045,7 @@ html, body {
     .mempelai .couple img, .img-arab { 
         max-width: 220px; 
     } 
-    .mempelai h3 {
-        font-size: 2rem;
-    }
-    .mempelai .couple h3 {
-        font-size: 1.8rem;
-    }
+    
     #home {
         height: 130vh;
     }
@@ -1102,6 +1097,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
