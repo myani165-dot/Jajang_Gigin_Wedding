@@ -110,7 +110,7 @@ html, body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 75vh; /* sedikit lebih dari setengah */
+    height: 65vh; /* sedikit lebih dari setengah */
     background: url('img/bg.png') center bottom/cover no-repeat;
     mask-image: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 120%);
     mask-repeat: no-repeat;
@@ -338,7 +338,7 @@ html, body {
         background-size: cover;
         background-position: center;
         min-height: 650px;
-        border-radius: 6%;
+        border-radius: 5%;
     }
     
         .card-img-top {
@@ -999,7 +999,7 @@ html, body {
 }
 
 .doa {
-    background-color: #446e922b;
+    background-color: linear-gradient (to bottom, #446d92, #7cabd6);
     padding: 2rem;
     box-sizing: border-box;
     width: 100%;
@@ -1047,6 +1047,7 @@ html, body {
   padding: 1rem;
   overflow: hidden;
   background: url('img/fix.png') center/cover no-repeat;
+    z-index: -2;
 }
 
 .hope-top::after {
@@ -1054,13 +1055,13 @@ html, body {
   position: absolute;
   inset: 0; /* isi full */
   background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-  z-index: 1; /* gradient di atas gambar */
+  z-index: -1; /* gradient di atas gambar */
 }
 
 /* Bagian bawah: warna solid */
 .hope-bottom {
   height: 50vh; /* sisanya */
-  background: #446e922b;
+  background-color: linear-gradient (to bottom, white, #446e922b);
   padding: 1rem;
 }
 
@@ -1195,6 +1196,7 @@ html, body {
    }
     
 }
+
 
 
 
