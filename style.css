@@ -76,10 +76,10 @@ html, body {
     padding-top: 15rem;
     padding-bottom: 5rem;
     position: relative;
-    width: 100%;
-    min-height: 100vh; /* full layar */
-    overflow: hidden;
-    }
+    width: 100vw; /* pastikan tidak melebar */
+    min-height: 100vh;
+    overflow-x: hidden; /* cegah horizontal scroll */
+}
 
 /* overlay bagian atas */
 .home::before {
@@ -239,6 +239,8 @@ html, body {
     position: relative;
     width: 100%;
     min-height: 100vh; /* full layar */
+    overflow-x: hidden; /* cegah scroll horizontal */
+    box-sizing: border-box; /* pastikan padding nggak bikin melebar */
 }
 
 .mempelai p {
@@ -247,8 +249,10 @@ html, body {
     font-family: 'Sorts Mill Goudy', serif;
     font-style: italic;
     text-align: center;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 .elegant-frame {
@@ -264,9 +268,10 @@ html, body {
 
 /* Foto pasangan */
 .mempelai .couple img {
-  width: 100%;
-  height: auto;
-  max-width: 180px;
+  max-width: 100%; /* jangan melebihi parent */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* center */
   opacity: 1;
   transition: transform 0.3s ease;
 }
@@ -302,7 +307,9 @@ html, body {
 .info {
         position: relative;
         width: 100%;
-        height: 100%; /* full layar */
+        min-height: 100vh;
+        overflow-x: hidden; /* cegah scroll horizontal */
+        position: relative;
         background-color: var(--denim); /* ganti dengan warna tema kamu */
         font-family: 'Sorts Mill Goudy',serif;
         font-style: italic;
@@ -323,8 +330,8 @@ html, body {
     }
     .card-custom {
         width: 90%;
+        max-width: 100%;
         margin: 30px auto;
-        border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         background-image: url('img/bg susut.png');
@@ -335,15 +342,17 @@ html, body {
     }
     
         .card-img-top {
-        margin-top: 1.5rem;
-        object-fit: cover;
-        width: 90%;
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        margin: 1.5rem auto 0 auto;
         border-radius: 6%;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px -10px 20px rgba(0,0,0,0.3); /* Efek bayangan */
         transition: transform 0.3s; /* Efek transisi saat hover */
     }
     .card-resepsi {
         width: 90%;
+        max-width: 100%;
         margin: 30px auto;
         min-height: 310px;
         border-radius: 15px;
@@ -357,7 +366,8 @@ html, body {
     .card-body {
         flex: 1;
         color:var(--denim);
-        padding: 25px 30px 10px;
+        box-sizing: border-box;
+        padding: 25px 30px; /* cukup tanpa margin di p */
     }
     .card-body h2{
         font-family: 'sorts mill goudy', serif;
@@ -367,7 +377,7 @@ html, body {
         text-align: center;
     }
     .card-body p{
-        margin-left: 1.6rem;
+        margin-left: 0;
         text-align: left;
     }
     .garis {
@@ -419,7 +429,7 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background: url('img/bg\ biru.png') center top/cover no-repeat;
     mask-image: linear-gradient(to bottom, rgb(255, 255, 255,0.2), rgba(255, 255, 255, 0.2));
@@ -449,7 +459,9 @@ html, body {
 
 .plus .card-body {
     width: 90%;
-    margin: 30px auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 20px 25px; /* horizontal padding cukup di sini */
     color: var(--denim);
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 30px;
@@ -467,7 +479,7 @@ html, body {
     margin-bottom: 2rem;
 }
 .plus .card-body p {
-    margin-left: 1rem;
+    margin-left: 0;
     font-family: 'Times New Roman', serif;
     text-align: left;
 }
@@ -930,14 +942,6 @@ html, body {
   100% { transform: rotate(-10deg); }
 }
 
-
-.bunga-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden; /* ini yang nutup overflow */
-}
-
-
 /* Animasi goyang bunga */
 /* Animasi bunga kiri (default) */
 @keyframes goyang-kiri {
@@ -954,12 +958,23 @@ html, body {
 }
 
 /* Style bunga */
+.bunga-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
 .bunga {
-  position: absolute;
-  bottom: 0;
-  opacity: 0.8;
-  transform-origin: bottom center;
-  display: none; /* default hide */
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 250px;
+    opacity: 0.8;
+    transform-origin: bottom center;
 }
 
 .bunga-kiri { 
@@ -1030,6 +1045,12 @@ html, body {
     .mempelai .couple img, .img-arab { 
         max-width: 220px; 
     } 
+    .mempelai h3 {
+        font-size: 2rem;
+    }
+    .mempelai .couple h3 {
+        font-size: 1.8rem;
+    }
     #home {
         height: 130vh;
     }
@@ -1081,6 +1102,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
