@@ -466,27 +466,30 @@ document.addEventListener('DOMContentLoaded', function () {
   // Tombol Buka Undangan
   // ------------------------
   openBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // cegah scroll default browser
-    // Lepas lock scroll awal
-    window.removeEventListener('wheel', lockScroll);
-    window.removeEventListener('touchmove', lockScroll);
+  e.preventDefault();
 
-    // Snap ke Home
-    window.scrollTo({ top: homeTop, behavior: 'auto' });
+  // Lepas lock scroll awal
+  window.removeEventListener('wheel', lockScroll);
+  window.removeEventListener('touchmove', lockScroll);
 
-    // Aktifkan hard lock supaya tidak scroll balik ke Hero
+  // Snap ke Home
+  window.scrollTo({ top: homeTop, behavior: 'auto' });
+
+  // Delay sebentar sebelum aktifkan hardLock
+  setTimeout(() => {
     function hardLock(e){
-      if(window.scrollY < homeTop + 1){
+      if(window.scrollY < homeTop - 5){  // toleransi 5px
         e.preventDefault();
         window.scrollTo({ top: homeTop, behavior: 'auto' });
       }
     }
     window.addEventListener('wheel', hardLock, { passive: false });
     window.addEventListener('touchmove', hardLock, { passive: false });
+  }, 50); // 50ms delay supaya scroll stabil
 
-    // Play audio
-    playAudio();
-  });
+  // Play audio
+  playAudio();
+});
 
 });
   </script>
@@ -773,6 +776,7 @@ loadComments();
 
 
 </html>
+
 
 
 
