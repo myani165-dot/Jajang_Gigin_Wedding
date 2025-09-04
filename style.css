@@ -452,7 +452,7 @@ html, body {
 .plus h1 {
         font-family: 'Sorts Mill Goudy', serif;
         font-style: italic;
-        font-size: 2.3rem;
+        font-size: 2.6rem;
         margin-top: 3rem;
         color: var(--denim);
     }
@@ -460,6 +460,7 @@ html, body {
 .plus .card-body {
     width: 90%;
     max-width: 100%;
+    margin:0;
     box-sizing: border-box;
     padding: 20px 25px; /* horizontal padding cukup di sini */
     color: var(--denim);
@@ -1097,6 +1098,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
