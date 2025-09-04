@@ -1039,7 +1039,7 @@ html, body {
 .hope-top {
   height: 50vh; /* atur tinggi bagian gambar */
   background: linear-gradient(to bottom, rgba(156,173,206,0), #446e922b),
-              url("img/fix.jpg") center/cover no-repeat;
+              url("img/fix.png") center/cover no-repeat;
   padding: 1rem;
 }
 
@@ -1176,6 +1176,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
