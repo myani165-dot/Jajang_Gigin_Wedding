@@ -698,7 +698,7 @@ html, body {
 }
 
 .divider i {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #446d92;
   opacity: 0;
   transition: opacity 0.6s ease 0.3s;
@@ -1039,7 +1039,7 @@ html, body {
 .hope-top {
   position: relative;
   height: 50vh;
-  background: url('img/bg.jpg') center/cover no-repeat;
+  background: url('img/fix.png') center/cover no-repeat;
 }
 
 .hope-top::after {
@@ -1196,76 +1196,3 @@ html, body {
         height: 120vh;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
