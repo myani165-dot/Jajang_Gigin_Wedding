@@ -417,7 +417,7 @@ html, body {
     background-color: transparent;
 }
 .plus {
-    margin0;
+    margin: 0;
     position: relative;
     width: 100%;
     min-height: 55vh;
@@ -995,7 +995,7 @@ html, body {
 }
 
 .doa {
-    background-color: #e0ffff;
+    background-color: #446e922b;
     padding: 2rem;
     box-sizing: border-box;
     width: 100%;
@@ -1128,6 +1128,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
