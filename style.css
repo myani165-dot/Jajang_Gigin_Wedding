@@ -338,7 +338,6 @@ html, body {
         background-size: cover;
         background-position: center;
         min-height: 650px;
-        border-radius: 10%;
     }
     
         .card-img-top {
@@ -1098,6 +1097,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
