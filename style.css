@@ -416,6 +416,7 @@ html, body {
 .plus .section{
     background-color: transparent;
 }
+
 .plus {
     margin: 0;
     position: relative;
@@ -447,7 +448,10 @@ html, body {
 
 .plus .container {
     position: relative;
-    z-index: 1;
+  z-index: 1;
+  max-width: 900px;   /* kasih batas lebar */
+  margin: 0 auto;     /* center horizontal */
+  padding: 0 15px;    /* biar ga mepet ke tepi */
 }
 .plus h1 {
         font-family: 'Sorts Mill Goudy', serif;
@@ -1128,6 +1132,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
