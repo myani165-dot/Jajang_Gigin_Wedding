@@ -698,7 +698,7 @@ html, body {
 }
 
 .divider i {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   color: #446d92;
   opacity: 0;
   transition: opacity 0.6s ease 0.3s;
@@ -890,7 +890,7 @@ html, body {
 /* ===== Class dasar animasi ===== */
 .anim {
   opacity: 0;
-  transition: all 5s ease;
+  transition: all 4s ease;
 }
 
 /* muncul saat scroll */
@@ -1064,13 +1064,14 @@ html, body {
 }
 
 .hope h2 {
-    font-family: 'italianno', cursive;
+    font-family: 'Italianno', cursive;
     font-size: 2.5rem;
 }
 
 .card-logo {
     background-color: transparent;
     border: none;
+}
 
 .btn-wa:hover {
   background-color: #1ebe5d; /* versi lebih gelap saat hover */
@@ -1185,6 +1186,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
