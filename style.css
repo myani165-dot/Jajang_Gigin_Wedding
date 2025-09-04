@@ -338,14 +338,14 @@ html, body {
         background-size: cover;
         background-position: center;
         min-height: 650px;
-        
+        border-radius: 10%;
     }
     
         .card-img-top {
-        width: 100%;
-        max-width: 100%;
+        width: 90%;
+        max-width: 400px;
         display: block;
-        margin: 1.5rem auto 0 auto;
+        margin: 1.5rem auto;
         border-radius: 6%;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px -10px 20px rgba(0,0,0,0.3); /* Efek bayangan */
         transition: transform 0.3s; /* Efek transisi saat hover */
@@ -1097,6 +1097,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
