@@ -112,7 +112,7 @@
 
     <section id="info" class="info py-5">
   <div class="container">
-    <div class="row justify-content-center mb-4">
+    <div class="justify-content-center mb-4">
         <div class="flower-wrapper">
                 <img src="img/ornamen.png" alt="Bunga" class="flower">
             </div>
@@ -430,9 +430,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Snap sekali ke #home
   window.scrollTo({ top: homeTop, behavior: 'auto' });
 
-  // Hapus hash URL
-  history.replaceState(null, null, ' ');
-
+  // Hapus hanya hash, simpan path + query
+history.replaceState(null, null, window.location.pathname + window.location.search);
+        
   // Hard lock sederhana: mencegah scroll ke atas dari #home
   function hardLock(e){
     if(window.scrollY < homeTop){
@@ -754,6 +754,7 @@ loadComments();
 
 
 </html>
+
 
 
 
