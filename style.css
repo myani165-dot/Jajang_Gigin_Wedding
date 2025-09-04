@@ -685,7 +685,7 @@ html, body {
 .divider span {
   flex: 1;
   height: 3px;
-  background: linear-gradient(90deg, #446d92, #d63384) !important;
+  background: linear-gradient(90deg, #446d92, #9cadce) !important;
   opacity: 0.8;
   transform: scaleX(0);
   transform-origin: center;
@@ -1098,6 +1098,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
