@@ -1048,8 +1048,8 @@ html, body {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(68,110,146,0),
-    rgba(68,110,146,1)
+    rgba(0,0,0,0),
+    rgba(0,0,0,1)
   );
 }
 
@@ -1145,9 +1145,6 @@ html, body {
         max-width: 220px; 
     } 
     
-    #home {
-        height: 130vh;
-    }
     .home h4 {
         margin-top: 40%;
     }
@@ -1192,9 +1189,8 @@ html, body {
    .mempelai .img-arab {
        max-width: 180px;
    }
-    #home {
-        height: 120vh;
-    }
+    
 }
+
 
 
