@@ -838,7 +838,7 @@ html, body {
     cursor: pointer;
 }
 #comment-container {
-  max-height: 300px;    /* tinggi area komentar */
+  max-height: 200px;    /* tinggi area komentar */
   overflow-y: auto;     /* aktifkan scroll vertikal */
   padding-right: 6px;
   margin-bottom: 1rem;
@@ -1098,6 +1098,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
