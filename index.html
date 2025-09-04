@@ -416,34 +416,41 @@ document.addEventListener('DOMContentLoaded', function () {
     let isPlaying = false; 
       
       function disableScroll() {
-          document.body.style.overflow = 'hidden';
-      }
+  window.scrollTo(0, 0);
 
+  function lockScroll(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }
 
-    function enableScroll() {
-  document.body.style.overflow = ''; // aktifkan scroll
+  window.addEventListener('wheel', lockScroll, { passive: false });
+  window.addEventListener('touchmove', lockScroll, { passive: false });
+  window.addEventListener('scroll', lockScroll, { passive: false });
+
+  // Simpan biar bisa dilepas di enableScroll
+  disableScroll.lockScroll = lockScroll;
+}
+
+function enableScroll() {
+  document.body.style.overflow = ''; 
   playAudio();
 
   const homeSection = document.querySelector('#home');
   const homeTop = homeSection.offsetTop;
 
-  // Snap sekali ke #home
+  // Snap ke #home
   window.scrollTo({ top: homeTop, behavior: 'auto' });
 
-  // Hapus hanya hash, simpan path + query
-history.replaceState(null, null, window.location.pathname + window.location.search);
-        
-  // Hard lock sederhana: mencegah scroll ke atas dari #home
-  function hardLock(e){
-    if(window.scrollY < homeTop){
-      e.preventDefault();
-      window.scrollTo({ top: homeTop, behavior: 'auto' });
-    }
-  }
+  // Hapus hash
+  history.replaceState(null, null, window.location.pathname + window.location.search);
 
-  window.addEventListener('wheel', hardLock, { passive: false });
-  window.addEventListener('touchmove', hardLock, { passive: false });
+  // Lepas kunci scroll
+  window.removeEventListener('wheel', disableScroll.lockScroll);
+  window.removeEventListener('touchmove', disableScroll.lockScroll);
+  window.removeEventListener('scroll', disableScroll.lockScroll);
 }
+
 
     function playAudio(){
       song.volume = 0.1;
@@ -754,6 +761,7 @@ loadComments();
 
 
 </html>
+
 
 
 
