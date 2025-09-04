@@ -33,7 +33,7 @@
             <h1>Jajang & Gigin</h1>
             <h4 class="mb-2">Kepada <span id="sapaan"></span></h4>
             <h4 id="nama-undangan" class="fw-bold mt-4"></h4>
-            <a href="#home" id="openInvitation" class="btn btn-lg mt-4 btn-glow btn-bounce">
+            <a href="#home" id="openInvitation" class="btn btn-lg mt-4 btn-glow btn-bounce" onclick="enableScroll()">
                 <i class="bi bi-envelope-open"></i> Buka Undangan
             </a>
 
@@ -411,89 +411,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-  const heroSection = document.querySelector('#hero');
+    
+    const rootElement = document.querySelector(":root");
+    const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+    const audioIcon = document.querySelector('.audio-icon-wrapper i');
+    const song = document.querySelector('#song');
+    let isPlaying = false; 
+      
+      function disableScroll() {
+          document.body.style.overflow = 'hidden';
+      }
+
+
+    function enableScroll() {
+  document.body.style.overflow = ''; // aktifkan scroll
+  playAudio();
+
   const homeSection = document.querySelector('#home');
-  const openBtn = document.querySelector('#openInvitation');
-  const song = document.querySelector('#song');
-  const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
-  const audioIcon = document.querySelector('.audio-icon-wrapper i');
-  let isPlaying = false;
   const homeTop = homeSection.offsetTop;
 
-  // ------------------------
-  // Fungsi Audio
-  // ------------------------
-  function playAudio() {
-    song.volume = 0.1;
-    audioIconWrapper.style.display = 'flex';
-    song.play();
-    isPlaying = true;
-  }
-
-  audioIconWrapper.onclick = function() {
-    if(isPlaying){
-      song.pause();
-      audioIcon.classList.remove('bi-disc');
-      audioIcon.classList.add('bi-pause-circle');
-    } else {
-      song.play();
-      audioIcon.classList.add('bi-disc');
-      audioIcon.classList.remove('bi-pause-circle');
-    }
-    isPlaying = !isPlaying;
-  }
-
-  // ------------------------
-  // Disable scroll awal di Hero
-  // ------------------------
- // Hanya block scroll, jangan block klik
-function lockScroll(e) {
-  if (e.type === 'wheel' || e.type === 'touchmove') {
-    e.preventDefault();
-  }
-}
-window.addEventListener('wheel', lockScroll, { passive: false });
-window.addEventListener('touchmove', lockScroll, { passive: false });
-
-  window.scrollTo(0, 0);
-
-  // Hapus hash tapi tetap simpan query
-  if(window.location.hash){
-    history.replaceState(null, null, window.location.pathname + window.location.search);
-  }
-
-  // ------------------------
-  // Tombol Buka Undangan
-  // ------------------------
-  openBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  // Lepas lock scroll awal
-  window.removeEventListener('wheel', lockScroll);
-  window.removeEventListener('touchmove', lockScroll);
-
-  // Snap ke Home
+  // Snap sekali ke #home
   window.scrollTo({ top: homeTop, behavior: 'auto' });
 
-  // Delay pakai requestAnimationFrame agar scroll stabil
-  requestAnimationFrame(() => {
-    function hardLock(e){
-      if(window.scrollY < homeTop - 5){  // toleransi 5px
-        e.preventDefault();
-        window.scrollTo({ top: homeTop, behavior: 'auto' });
-      }
+  // Hapus hash URL
+  history.replaceState(null, null, window.location.pathname + window.location.search);
+
+  // Hard lock sederhana: mencegah scroll ke atas dari #home
+  function hardLock(e){
+    if(window.scrollY < homeTop){
+      e.preventDefault();
+      window.scrollTo({ top: homeTop, behavior: 'auto' });
     }
-    window.addEventListener('wheel', hardLock, { passive: false });
-    window.addEventListener('touchmove', hardLock, { passive: false });
-  });
+  }
 
-  // Play audio
-  playAudio();
-});
+  window.addEventListener('wheel', hardLock, { passive: false });
+  window.addEventListener('touchmove', hardLock, { passive: false });
+}
 
+    function playAudio(){
+      song.volume = 0.1;
+      audioIconWrapper.style.display = 'flex';
+      song.play();
+      isPlaying = true;
+    }
 
-});
+    audioIconWrapper.onclick = function(){
+      if(isPlaying){
+        song.pause();
+        audioIcon.classList.remove('bi-disc');
+        audioIcon.classList.add('bi-pause-circle');
+      } else {
+        song.play();
+        audioIcon.classList.add('bi-disc');
+        audioIcon.classList.remove('bi-pause-circle');
+      }
+
+      isPlaying=!isPlaying;
+    }
+
+    // if(!localStorage.getItem('opened')) {
+      // disableScroll();
+    // }
+    disableScroll();
+  
   </script>
   
   <script>
@@ -778,6 +758,7 @@ loadComments();
 
 
 </html>
+
 
 
 
