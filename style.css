@@ -1075,12 +1075,6 @@ html, body {
 
 .hope-bottom h2 {
     font-family: 'Italianno', cursive;
-    font-size: 2.5rem;
-}
-
-.card-logo {
-    background-color: transparent;
-    border: none;
 }
 
 .btn-wa:hover {
@@ -1191,6 +1185,7 @@ html, body {
    }
     
 }
+
 
 
 
