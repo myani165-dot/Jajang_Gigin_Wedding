@@ -417,7 +417,7 @@ html, body {
     background-color: transparent;
 }
 .plus {
-    margin-top: -3.3rem;
+    margin0;
     position: relative;
     width: 100%;
     min-height: 55vh;
@@ -1128,6 +1128,7 @@ html, body {
         height: 120vh;
     }
 }
+
 
 
 
