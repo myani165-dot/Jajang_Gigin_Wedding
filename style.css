@@ -7,7 +7,7 @@
   --accent-light: #d1e0f0; /* garis halus */
 }
 
-body {
+html, body {
     font-size: 1.2rem;
     font-family: 'Work Sans', sans-serif;
     min-height: 4000px;
@@ -1072,6 +1072,7 @@ body {
         height: 120vh;
     }
 }
+
 
 
 
