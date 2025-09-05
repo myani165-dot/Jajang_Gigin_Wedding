@@ -15,7 +15,12 @@ html, body {
     padding: 0;
     overflow-x: hidden;
 }
-
+body {
+  outline: 1px solid red; /* bikin body keliatan */
+}
+.mempelai {
+  outline: 1px solid blue; /* cek tinggi kontainer */
+}
 .hero {
     position: relative;
     width: 100%;
@@ -1209,6 +1214,7 @@ html, body {
    }
     
 }
+
 
 
 
