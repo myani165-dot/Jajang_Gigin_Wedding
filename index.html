@@ -33,7 +33,7 @@
             <h1>Jajang & Gigin</h1>
             <h4 class="mb-2">Kepada <span id="sapaan"></span></h4>
             <h4 id="nama-undangan" class="fw-bold mt-4"></h4>
-            <a href="#home" class="btn btn-lg mt-4 btn-glow btn-bounce" onclick="enableScroll(); history.pushState(null, null, '?open=1');">
+            <a href="#home" class="btn btn-lg mt-4 btn-glow btn-bounce" onclick="enableScroll();">
                 <i class="bi bi-envelope-open"></i>
                  Buka Undangan
             </a>
@@ -457,73 +457,67 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-
 <script>
-  const rootElement = document.querySelector(":root");
-  const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
-  const audioIcon = document.querySelector('.audio-icon-wrapper i');
-  const song = document.querySelector('#song');
-  let isPlaying = false; 
+const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+const audioIcon = document.querySelector('.audio-icon-wrapper i');
+const song = document.querySelector('#song');
+let isPlaying = false;
 
-  // Kunci scroll awal
-  function disableScroll() {
-    document.body.style.overflow = 'hidden';
-    window.addEventListener('wheel', hardLock, { passive: false });
-    window.addEventListener('touchmove', hardLock, { passive: false });
-  }
+// HERO & SCROLL CONTROL
+function disableScroll() {
+  document.body.style.overflow = 'hidden';
+}
+function enableScroll() {
+  // Aktifkan scroll
+  document.body.style.overflow = '';
 
-  // Buka scroll setelah klik
-  function enableScroll() {
-    document.body.style.overflow = ''; 
-    playAudio();
+  // Mulai audio
+  playAudio();
 
-    // sembunyikan cover (hero)
-    const cover = document.querySelector('.hero');
-    cover.classList.add('hidden');
+  // Hero tidak bisa diakses lagi
+  const cover = document.querySelector('.hero');
+  cover.style.pointerEvents = 'none'; // agar klik tidak bisa
+  cover.style.position = 'absolute'; // tetap ada tapi tidak mengganggu scroll
+  cover.style.zIndex = '-1';
 
-    // scroll snap ke #home
-    const homeSection = document.querySelector('#home');
-    const homeTop = homeSection.offsetTop;
-    window.scrollTo({ top: homeTop, behavior: 'auto' });
+  // Scroll ke home
+  const homeSection = document.querySelector('#home');
+  window.scrollTo({ top: homeSection.offsetTop, behavior: 'auto' });
 
-    // hapus hash URL
-    history.replaceState(null, null, window.location.pathname + window.location.search);
+  // Bersihkan hash / query
+  history.replaceState(null, null, window.location.pathname + window.location.search);
+}
 
-    // matikan hardLock biar scroll bebas
-    window.removeEventListener('wheel', hardLock, { passive: false });
-    window.removeEventListener('touchmove', hardLock, { passive: false });
-  }
+// Tombol buka
+document.getElementById('btnBuka').addEventListener('click', function(e){
+  e.preventDefault();
+  enableScroll();
+});
 
-  // Fungsi lock scroll
-  function hardLock(e) {
-    e.preventDefault();
-  }
-
-  // Play audio
-  function playAudio(){
-    song.volume = 0.1;
-    audioIconWrapper.style.display = 'flex';
+// AUDIO
+function playAudio(){
+  song.volume = 0.3;
+  audioIconWrapper.style.display = 'flex';
+  song.play();
+  isPlaying = true;
+}
+audioIconWrapper.onclick = function(){
+  if(isPlaying){
+    song.pause();
+    audioIcon.classList.remove('bi-disc');
+    audioIcon.classList.add('bi-pause-circle');
+  } else {
     song.play();
-    isPlaying = true;
+    audioIcon.classList.add('bi-disc');
+    audioIcon.classList.remove('bi-pause-circle');
   }
+  isPlaying = !isPlaying;
+}
 
-  // Klik icon musik
-  audioIconWrapper.onclick = function(){
-    if(isPlaying){
-      song.pause();
-      audioIcon.classList.remove('bi-disc');
-      audioIcon.classList.add('bi-pause-circle');
-    } else {
-      song.play();
-      audioIcon.classList.add('bi-disc');
-      audioIcon.classList.remove('bi-pause-circle');
-    }
-    isPlaying=!isPlaying;
-  }
-
-  // Saat pertama kali load halaman → kunci
-  disableScroll();
+// HERO awal terkunci
+disableScroll();
 </script>
+
 
   
   <script>
@@ -808,6 +802,7 @@ loadComments();
 
 
 </html>
+
 
 
 
