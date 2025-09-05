@@ -1090,7 +1090,11 @@ html, body {
   text-decoration: none;
   transition: background 0.3s ease;
 }
-
+.hope-bottom p {
+    font-family: 'Sorts Mill Goudy', serif;
+    font-style: italic;
+    color: #446d92;
+}
 .hope-bottom h2 {
     font-family: 'Italianno', cursive;
     font-size: 3rem;
@@ -1207,6 +1211,7 @@ html, body {
    }
     
 }
+
 
 
 
