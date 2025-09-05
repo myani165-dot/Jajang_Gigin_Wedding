@@ -477,8 +477,7 @@ function enableScroll() {
   // Hero tidak bisa diakses lagi
   const cover = document.querySelector('.hero');
   cover.style.pointerEvents = 'none'; // agar klik tidak bisa
-  cover.style.position = 'absolute'; // tetap ada tapi tidak mengganggu scroll
-  cover.style.zIndex = '-111';
+   cover.style.display = 'none'; // bikin hero benar-benar hilang
 
   // Scroll ke home
   const homeSection = document.querySelector('#home');
@@ -802,6 +801,7 @@ loadComments();
 
 
 </html>
+
 
 
 
