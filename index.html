@@ -85,7 +85,7 @@
                     <h3  class="anim from-right">Assalamu'alaikum Warahmatullahi Wabarakatuh</h3>
                     <p class="anim from-left">Dengan memohon rahmat dan ridho Allah SWT. <br>Tanpa mengurangi rasa hormat. Dengan segala kerendahan hati, kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami.</p>
                 </div>
-           <div class="row couple mt-5 text-center justify-content-center">
+           <div class="row couple mt-3 text-center justify-content-center">
             <div class="col-md-4 col-12 mt-5">
                 <div class="anim zoom-in fade">
               <img src="img/cowo.png" alt="Muhammad Nurjaman" class="img-responsive rounded-circle elegant-frame anim zoom-in">
@@ -94,11 +94,11 @@
               <p class="anim from-bottom">Putra kedua dari <br>Bapak Muhidin & Ibu Iroh</p>
             </div>
 
-            <div class="col-lg-2 col-12 mt-5 d-flex justify-content-center align-items-center anim fade">
+            <div class="col-lg-2 col-12 mt-3 d-flex justify-content-center align-items-center anim fade">
               <h3>&</h3>
             </div>
 
-            <div class="col-md-4 col-12 mt-5">
+            <div class="col-md-4 col-12 mt-3">
                 <div class="anim zoom-in fade">
               <img src="img/cewe.png" alt="Gina Guslina" class="img-responsive rounded-circle elegant-frame">
                 </div>
@@ -458,6 +458,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script>
+<script>
 const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
 const audioIcon = document.querySelector('.audio-icon-wrapper i');
 const song = document.querySelector('#song');
@@ -465,7 +466,8 @@ let isPlaying = false;
 
 // HERO & SCROLL CONTROL
 function disableScroll() {
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden'; // nge-lock scroll
+  document.body.style.height = '100vh';     // pastikan tinggi body tetap
 }
 function enableScroll() {
   // Aktifkan scroll
@@ -487,11 +489,17 @@ function enableScroll() {
   history.replaceState(null, null, window.location.pathname + window.location.search);
 }
 
-// Tombol buka
-document.getElementById('btnBuka').addEventListener('click', function(e){
-  e.preventDefault();
-  enableScroll();
-});
+// Hard lock: tidak bisa scroll ke atas #home
+  function hardLock(e){
+    if(window.scrollY < homeTop){
+      e.preventDefault();
+      window.scrollTo({ top: homeTop, behavior: 'auto' });
+    }
+  }
+
+  window.addEventListener('wheel', hardLock, { passive: false });
+  window.addEventListener('touchmove', hardLock, { passive: false });
+
 
 // AUDIO
 function playAudio(){
@@ -515,6 +523,7 @@ audioIconWrapper.onclick = function(){
 
 // HERO awal terkunci
 disableScroll();
+</script>
 </script>
 
 
@@ -801,6 +810,7 @@ loadComments();
 
 
 </html>
+
 
 
 
