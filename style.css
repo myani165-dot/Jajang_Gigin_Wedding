@@ -72,10 +72,7 @@ html, body {
 }
 
 .hero.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.6s ease;
+  display: none;
 }
 
 
@@ -1211,6 +1208,7 @@ html, body {
    }
     
 }
+
 
 
 
