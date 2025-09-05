@@ -458,64 +458,73 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
- <script>
-    const rootElement = document.querySelector(":root");
-    const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
-    const audioIcon = document.querySelector('.audio-icon-wrapper i');
-    const song = document.querySelector('#song');
-    let isPlaying = false; 
-      
-      function disableScroll() {
-          document.body.style.overflow = 'hidden';
-      }
+<script>
+  const rootElement = document.querySelector(":root");
+  const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+  const audioIcon = document.querySelector('.audio-icon-wrapper i');
+  const song = document.querySelector('#song');
+  let isPlaying = false; 
 
+  // Kunci scroll awal
+  function disableScroll() {
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('wheel', hardLock, { passive: false });
+    window.addEventListener('touchmove', hardLock, { passive: false });
+  }
 
-    function enableScroll() {
-  document.body.style.overflow = ''; 
-  playAudio();
+  // Buka scroll setelah klik
+  function enableScroll() {
+    document.body.style.overflow = ''; 
+    playAudio();
 
-  // sembunyikan cover (hero)
-  const cover = document.querySelector('.hero');
-  cover.classList.add('hidden');
+    // sembunyikan cover (hero)
+    const cover = document.querySelector('.hero');
+    cover.classList.add('hidden');
 
-  const homeSection = document.querySelector('#home');
-  const homeTop = homeSection.offsetTop;
-  window.scrollTo({ top: homeTop, behavior: 'auto' });
+    // scroll snap ke #home
+    const homeSection = document.querySelector('#home');
+    const homeTop = homeSection.offsetTop;
+    window.scrollTo({ top: homeTop, behavior: 'auto' });
 
-  history.replaceState(null, null, window.location.pathname + window.location.search);
-}
+    // hapus hash URL
+    history.replaceState(null, null, window.location.pathname + window.location.search);
 
-  window.addEventListener('wheel', hardLock, { passive: false });
-  window.addEventListener('touchmove', hardLock, { passive: false });
-}
+    // matikan hardLock biar scroll bebas
+    window.removeEventListener('wheel', hardLock, { passive: false });
+    window.removeEventListener('touchmove', hardLock, { passive: false });
+  }
 
-    function playAudio(){
-      song.volume = 0.1;
-      audioIconWrapper.style.display = 'flex';
+  // Fungsi lock scroll
+  function hardLock(e) {
+    e.preventDefault();
+  }
+
+  // Play audio
+  function playAudio(){
+    song.volume = 0.1;
+    audioIconWrapper.style.display = 'flex';
+    song.play();
+    isPlaying = true;
+  }
+
+  // Klik icon musik
+  audioIconWrapper.onclick = function(){
+    if(isPlaying){
+      song.pause();
+      audioIcon.classList.remove('bi-disc');
+      audioIcon.classList.add('bi-pause-circle');
+    } else {
       song.play();
-      isPlaying = true;
+      audioIcon.classList.add('bi-disc');
+      audioIcon.classList.remove('bi-pause-circle');
     }
+    isPlaying=!isPlaying;
+  }
 
-    audioIconWrapper.onclick = function(){
-      if(isPlaying){
-        song.pause();
-        audioIcon.classList.remove('bi-disc');
-        audioIcon.classList.add('bi-pause-circle');
-      } else {
-        song.play();
-        audioIcon.classList.add('bi-disc');
-        audioIcon.classList.remove('bi-pause-circle');
-      }
+  // Saat pertama kali load halaman → kunci
+  disableScroll();
+</script>
 
-      isPlaying=!isPlaying;
-    }
-
-    // if(!localStorage.getItem('opened')) {
-      // disableScroll();
-    // }
-    disableScroll();
-  
-  </script>
   
   <script>
     document.addEventListener('DOMContentLoaded', function () {  
@@ -799,6 +808,7 @@ loadComments();
 
 
 </html>
+
 
 
 
