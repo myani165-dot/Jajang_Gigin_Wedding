@@ -999,7 +999,7 @@ html, body {
 }
 
 .doa {
-    background: #7cabd6;
+    background: #446e922b;
     padding: 2rem;
     box-sizing: border-box;
     width: 100%;
@@ -1061,7 +1061,7 @@ html, body {
 /* Bagian bawah: warna solid */
 .hope-bottom {
   height: 50vh; /* sisanya */
-  background-color: linear-gradient(to bottom, white, #446e922b);
+  background: white;
   padding: 1rem;
 }
 
@@ -1095,6 +1095,9 @@ html, body {
 
 .btn-wa i {
   font-size: 1.2rem;
+}
+.img-logo {
+    border-radius: 10%;
 }
 
 
@@ -1196,6 +1199,7 @@ html, body {
    }
     
 }
+
 
 
 
