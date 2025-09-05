@@ -269,7 +269,7 @@ html, body {
 }
 
 .elegant-frame:hover {
-  transform: scale(1.05); /* Zoom efek saat hover */
+  transform: scale(0.5); /* Zoom efek saat hover */
 }
 
 /* Foto pasangan */
@@ -1209,6 +1209,7 @@ html, body {
    }
     
 }
+
 
 
 
