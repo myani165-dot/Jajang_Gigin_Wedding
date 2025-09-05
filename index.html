@@ -33,7 +33,7 @@
             <h1>Jajang & Gigin</h1>
             <h4 class="mb-2">Kepada <span id="sapaan"></span></h4>
             <h4 id="nama-undangan" class="fw-bold mt-4"></h4>
-            <a href="#home" class="btn btn-lg mt-4 btn-glow btn-bounce" onclick="enableScroll();">
+            <a href="#home" id="btnBuka" class="btn btn-lg mt-4 btn-glow btn-bounce" onclick="enableScroll();">
                 <i class="bi bi-envelope-open"></i>
                  Buka Undangan
             </a>
@@ -489,7 +489,7 @@ function enableScroll() {
 }
 
 // Tombol buka
-document.getElementById('#home').addEventListener('onclick', function(e){
+document.getElementById('btnBuka').addEventListener('click', function(e){
   e.preventDefault();
   enableScroll();
 });
@@ -802,6 +802,7 @@ loadComments();
 
 
 </html>
+
 
 
 
