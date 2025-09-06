@@ -1111,10 +1111,11 @@ body {
 }
 
 .btn-wa i {
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 .img-logo {
     border-radius: 10%;
+    max-width: 100px;
 }
 
 
@@ -1221,6 +1222,7 @@ body {
    }
     
 }
+
 
 
 
