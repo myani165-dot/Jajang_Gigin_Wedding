@@ -15,12 +15,7 @@ html, body {
     padding: 0;
     overflow-x: hidden;
 }
-body {
-  outline: 1px solid red; /* bikin body keliatan */
-}
-.mempelai {
-  outline: 1px solid blue; /* cek tinggi kontainer */
-}
+
 .hero {
     position: relative;
     width: 100%;
@@ -249,7 +244,7 @@ body {
     background-color: #446e922b;
     position: relative;
     width: 100%;
-    min-height: 100vh; /* full layar */
+    height: 100vh; /* full layar */
     overflow-x: hidden; /* cegah scroll horizontal */
     box-sizing: border-box; /* pastikan padding nggak bikin melebar */
 }
@@ -1222,6 +1217,7 @@ body {
    }
     
 }
+
 
 
 
