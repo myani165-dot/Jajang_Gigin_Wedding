@@ -457,71 +457,60 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-<script>
-const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
-const audioIcon = document.querySelector('.audio-icon-wrapper i');
-const song = document.querySelector('#song');
-let isPlaying = false;
-
-// HERO & SCROLL CONTROL
-function disableScroll() {
-  document.body.style.overflow = 'hidden'; // nge-lock scroll
-  document.body.style.height = '100vh';     // pastikan tinggi body tetap
-}
-function enableScroll() {
-  // Aktifkan scroll
-  document.body.style.overflow = '';
-
-  // Mulai audio
-  playAudio();
-
-  // Hero tidak bisa diakses lagi
-  const cover = document.querySelector('.hero');
-  cover.style.pointerEvents = 'none'; // agar klik tidak bisa
-   cover.style.display = 'none'; // bikin hero benar-benar hilang
-
-  // Scroll ke home
-  const homeSection = document.querySelector('#home');
-  window.scrollTo({ top: homeSection.offsetTop, behavior: 'auto' });
-
-  // Bersihkan hash / query
-  history.replaceState(null, null, window.location.pathname + window.location.search);
-}
-
-// Hard lock: tidak bisa scroll ke atas #home
-  function hardLock(e){
-    if(window.scrollY < homeTop){
-      e.preventDefault();
-      window.scrollTo({ top: homeTop, behavior: 'auto' });
-    }
-  }
-
-  window.addEventListener('wheel', hardLock, { passive: false });
-  window.addEventListener('touchmove', hardLock, { passive: false });
-
-
-// AUDIO
-function playAudio(){
-  song.volume = 0.3;
-  audioIconWrapper.style.display = 'flex';
-  song.play();
-  isPlaying = true;
-}
-audioIconWrapper.onclick = function(){
-  if(isPlaying){
-    song.pause();
-    audioIcon.classList.remove('bi-disc');
-    audioIcon.classList.add('bi-pause-circle');
-  } else {
-    song.play();
-    audioIcon.classList.add('bi-disc');
-    audioIcon.classList.remove('bi-pause-circle');
-  }
-  isPlaying = !isPlaying;
-}
-
-// HERO awal terkunci
-disableScroll();
+<script> 
+    const rootElement = document.querySelector(":root"); 
+    const audioIconWrapper = document.querySelector('.audio-icon-wrapper'); 
+    const audioIcon = document.querySelector('.audio-icon-wrapper i'); 
+    const song = document.querySelector('#song'); 
+    
+    let isPlaying = false; 
+    
+    function disableScroll() { 
+        document.body.style.overflow = 'hidden'; } 
+    
+    function enableScroll() { 
+        document.body.style.overflow = ''; 
+        
+        // aktifkan scroll playAudio(); 
+        const homeSection = document.querySelector('#home'); 
+        const homeTop = homeSection.offsetTop; 
+        // Snap sekali ke #home 
+        window.scrollTo({ top: homeTop, behavior: 'auto' }); 
+        
+        // Hapus hash URL 
+        history.replaceState(null, null, window.location.pathname); 
+        
+        // Hard lock sederhana: mencegah scroll ke atas dari #home 
+        function hardLock(e){ if(window.scrollY < homeTop){ 
+            e.preventDefault(); window.scrollTo({ top: homeTop, behavior: 'auto' }); 
+        } 
+                            } 
+        window.addEventListener('wheel', hardLock, { passive: false }); 
+        window.addEventListener('touchmove', hardLock, { passive: false }); 
+    } 
+    
+    function playAudio(){ 
+        song.volume = 0.3; 
+        audioIconWrapper.style.display = 'flex'; 
+        song.play(); 
+        isPlaying = true; 
+    } 
+    audioIconWrapper.onclick = function(){ 
+        if(isPlaying){ 
+            song.pause(); 
+            audioIcon.classList.remove('bi-disc'); 
+            audioIcon.classList.add('bi-pause-circle'); 
+        } else { 
+            song.play(); 
+            audioIcon.classList.add('bi-disc'); 
+            audioIcon.classList.remove('bi-pause-circle'); 
+        } 
+        isPlaying=!isPlaying; 
+    } 
+    // if(!localStorage.getItem('opened')) { 
+    // disableScroll(); 
+    // } 
+    disableScroll(); 
 </script>
 
   
@@ -807,6 +796,7 @@ loadComments();
 
 
 </html>
+
 
 
 
