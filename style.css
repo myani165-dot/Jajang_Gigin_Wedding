@@ -291,7 +291,7 @@ body {
     width: 100%;
     max-width: 150px;
     margin-top: 2rem;
-    filter: brightness(10%), contrast(120%);
+    filter: brightness(10%) contrast(120%);
 }
 
 .mempelai h3 {
@@ -1216,6 +1216,7 @@ body {
    }
     
 }
+
 
 
 
