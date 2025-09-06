@@ -279,7 +279,7 @@ body {
 
 /* Foto pasangan */
 .mempelai .couple img {
-  width: 100%;
+  width: auto;
   height: 100%;
   max-height: 180px;
   opacity: 1;
@@ -1222,6 +1222,7 @@ body {
    }
     
 }
+
 
 
 
