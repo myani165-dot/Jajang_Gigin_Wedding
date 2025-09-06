@@ -453,65 +453,62 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-<script> 
-    const rootElement = document.querySelector(":root"); 
-    const audioIconWrapper = document.querySelector('.audio-icon-wrapper'); 
-    const audioIcon = document.querySelector('.audio-icon-wrapper i'); 
-    const song = document.querySelector('#song'); 
-    
-    let isPlaying = false; 
-    
-    function disableScroll() { 
-        document.body.style.overflow = 'hidden'; } 
-    
-    function enableScroll() { 
-        document.body.style.overflow = ''; 
-        
-        // aktifkan scroll playAudio(); 
-        const homeSection = document.querySelector('#home'); 
-        const homeTop = homeSection.offsetTop; 
-        // Snap sekali ke #home 
-        window.scrollTo({ top: homeTop, behavior: 'auto' }); 
+<script>
+    const rootElement = document.querySelector(":root");
+    const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+    const audioIcon = document.querySelector('.audio-icon-wrapper i');
+    const song = document.querySelector('#song');
+    let isPlaying = false;
 
-        playAudio();
+    function disableScroll() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
-        
-        // Hapus hash URL 
-        history.replaceState(null, null, window.location.pathname); 
-        
-        // Hard lock sederhana: mencegah scroll ke atas dari #home 
-        function hardLock(e){ if(window.scrollY < homeTop){ 
-            e.preventDefault(); window.scrollTo({ top: homeTop, behavior: 'auto' }); 
-        } 
-                            } 
-        window.addEventListener('wheel', hardLock, { passive: false }); 
-        window.addEventListener('touchmove', hardLock, { passive: false }); 
-    } 
-    
-    function playAudio(){ 
-        song.volume = 0.6; 
-        audioIconWrapper.style.display = 'flex'; 
-        song.play(); 
-        isPlaying = true; 
-    } 
-    audioIconWrapper.onclick = function(){ 
-        if(isPlaying){ 
-            song.pause(); 
-            audioIcon.classList.remove('bi-disc'); 
-            audioIcon.classList.add('bi-pause-circle'); 
-        } else { 
-            song.play(); 
-            audioIcon.classList.add('bi-disc'); 
-            audioIcon.classList.remove('bi-pause-circle'); 
-        } 
-        isPlaying=!isPlaying; 
-    } 
-    // if(!localStorage.getItem('opened')) { 
-    // disableScroll(); 
-    // } 
-    disableScroll(); 
+      window.onscroll = function() {
+        window.scrollTo(scrollTop, scrollLeft);
+      }
+
+      rootElement.style.scrollBehavior = 'auto';
+    }
+
+    function enableScroll(){
+      window.onscroll = function() { }
+      rootElement.style.scrollBehavior = 'smooth';
+      // localStorage.setItem('opened', 'true');
+      playAudio();
+
+      // scroll otomatis ke section undangan
+      document.querySelector('#home').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    function playAudio(){
+      song.volume = 0.1;
+      audioIconWrapper.style.display = 'flex';
+      song.play();
+      isPlaying = true;
+    }
+
+    audioIconWrapper.onclick = function(){
+      if(isPlaying){
+        song.pause();
+        audioIcon.classList.remove('bi-disc');
+        audioIcon.classList.add('bi-pause-circle');
+      } else {
+        song.play();
+        audioIcon.classList.add('bi-disc');
+        audioIcon.classList.remove('bi-pause-circle');
+      }
+
+      isPlaying=!isPlaying;
+    }
+
+    // if(!localStorage.getItem('opened')) {
+      // disableScroll();
+    // }
+    disableScroll();
 </script>
-
   
   <script>
     document.addEventListener('DOMContentLoaded', function () {  
@@ -795,6 +792,7 @@ loadComments();
 
 
 </html>
+
 
 
 
