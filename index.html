@@ -105,10 +105,6 @@
               <h3 class="anim from-top">Gina Guslina <br>(Gigin)</h3>
               <p class="anim from-bottom">Putri bungsu dari <br>Bapak Supriatna & Ibu Tati Herawati (Almh)</p>
             </div>
-          </div>
-          </div>
-          </div>
-          </div>
         </div>
     </section>
 
@@ -476,6 +472,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const homeTop = homeSection.offsetTop; 
         // Snap sekali ke #home 
         window.scrollTo({ top: homeTop, behavior: 'auto' }); 
+
+        playAudio();
+
         
         // Hapus hash URL 
         history.replaceState(null, null, window.location.pathname); 
@@ -796,6 +795,7 @@ loadComments();
 
 
 </html>
+
 
 
 
