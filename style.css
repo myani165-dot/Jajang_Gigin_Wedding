@@ -279,7 +279,7 @@ body {
 
 /* Foto pasangan */
 .mempelai .couple img {
-  max-width: 100%; /* jangan melebihi parent */
+  max-width: 180px; /* jangan melebihi parent */
     height: auto;
     display: block;
     margin: 0 auto; /* center */
@@ -1214,6 +1214,7 @@ body {
    }
     
 }
+
 
 
 
