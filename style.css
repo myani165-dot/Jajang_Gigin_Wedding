@@ -287,7 +287,9 @@ body {
 }
 
 
-.mempelai .img-bismillah {
+.mempelai .img-arab {
+    width: 100%;
+    max-width: 150px;
     margin-top: 2rem;
     filter: brightness(10%), contrast(120%);
 }
@@ -1214,6 +1216,7 @@ body {
    }
     
 }
+
 
 
 
