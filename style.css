@@ -281,7 +281,7 @@ body {
 .mempelai .couple img {
   width: 100%;
   height: auto;
-  max-width: 180px;
+  max-width: 150px;
   opacity: 1;
   transition: transform 0.3s ease;
 }
@@ -1165,7 +1165,7 @@ body {
     }  
     
     .mempelai .couple img, .img-arab { 
-        max-width: 220px; 
+        max-width: 180px; 
     } 
     
     .home h4 {
@@ -1214,6 +1214,7 @@ body {
    }
     
 }
+
 
 
 
